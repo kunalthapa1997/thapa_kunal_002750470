@@ -4,7 +4,8 @@
  */
 package ui;
 
-import model.Product;
+import model.Employee;
+import model.EmployeeRecord;
 
 /**
  *
@@ -16,11 +17,15 @@ public class FrontEndJFrame extends javax.swing.JFrame {
      * Creates new form FrontEndJFrame
      */
     
-    Product product;
+    Employee product;
+    
+    EmployeeRecord employee;
+    
     public FrontEndJFrame() {
         initComponents();
         
-        product = new Product();
+        product = new Employee();
+        employee = new EmployeeRecord();
     }
 
     /**
@@ -48,7 +53,7 @@ public class FrontEndJFrame extends javax.swing.JFrame {
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 359, Short.MAX_VALUE)
+            .addGap(0, 513, Short.MAX_VALUE)
         );
 
         splitPane.setRightComponent(controlPanel);
@@ -61,7 +66,7 @@ public class FrontEndJFrame extends javax.swing.JFrame {
         );
         workPanelLayout.setVerticalGroup(
             workPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 359, Short.MAX_VALUE)
+            .addGap(0, 513, Short.MAX_VALUE)
         );
 
         splitPane.setLeftComponent(workPanel);
@@ -89,13 +94,13 @@ public class FrontEndJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
                 .addComponent(splitPane, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane)
+            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(91, 91, 91)
                 .addComponent(btnCreate)
@@ -110,14 +115,14 @@ public class FrontEndJFrame extends javax.swing.JFrame {
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
         
-        createJPanel createPanel = new createJPanel(product);
+        createJPanel createPanel = new createJPanel(employee);
         splitPane.setRightComponent(createPanel);
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
         
-        viewJPanel viewPanel = new viewJPanel(product);
+        viewJPanel viewPanel = new viewJPanel(employee);
         splitPane.setRightComponent(viewPanel);
     }//GEN-LAST:event_btnViewActionPerformed
 
