@@ -10,5 +10,7 @@ This application offers 4 operations : -
 
 A user can do all the above operations for an employee.
 
+You can also view the photo of employee.
+
 It is a user-friendly application and user can navigate over different panels to execute the above said features.
 
