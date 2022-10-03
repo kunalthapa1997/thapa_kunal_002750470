@@ -21,6 +21,7 @@ public class Employee {
     private String posTitle;
     private String contactInfo;
     private String email;
+    private String photo;
 
     public String getName() {
         return name;
@@ -100,6 +101,14 @@ public class Employee {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
     
     @Override
