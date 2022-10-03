@@ -84,6 +84,7 @@ public class viewJPanel extends javax.swing.JPanel {
         txtSearchField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         lblImage = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -161,6 +162,10 @@ public class viewJPanel extends javax.swing.JPanel {
         lblImage.setBackground(new java.awt.Color(0, 0, 0));
         lblImage.setOpaque(true);
 
+        jLabel2.setBackground(new java.awt.Color(255, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jLabel2.setText("jLabel2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -231,10 +236,12 @@ public class viewJPanel extends javax.swing.JPanel {
                                         .addGap(78, 78, 78)
                                         .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 37, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
@@ -242,18 +249,18 @@ public class viewJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addGap(17, 17, 17)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtSearchField)
                             .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -288,7 +295,9 @@ public class viewJPanel extends javax.swing.JPanel {
                             .addComponent(btnUpdate)
                             .addComponent(btnView)
                             .addComponent(btnDelete))
-                        .addGap(17, 17, 17)))
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel2)))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -386,6 +395,17 @@ public class viewJPanel extends javax.swing.JPanel {
              JOptionPane.showMessageDialog(this, "Selected employee has been deleted");
              
              addDataToTable();
+                txtName.setText("");
+                txtAge.setText("");
+                txtEmpID.setText("");
+                txtGender.setText("");
+                txtLevel.setText("");
+                txtPosition.setText("");
+                txtPhone.setText("");
+                txtEmail.setText("");
+                txtStartDate.setText("");
+                txtTeamInfo.setText("");
+                lblImage.setText("");
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
@@ -404,6 +424,7 @@ public class viewJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable2;
     private javax.swing.JLabel lblAge;
@@ -432,25 +453,6 @@ public class viewJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtTeamInfo;
     // End of variables declaration//GEN-END:variables
 
-//    private void displayEmployeeInfo(selectedEmployee) {
-//        
-//       txtName.setText(product.getName());
-//       txtAge.setText(product.getAge());
-//       txtEmpID.setText(product.getEmpId());
-//       txtGender.setText(product.getGender());
-//       txtLevel.setText(product.getLevel());
-//       txtPosition.setText(product.getPosTitle());
-//       txtPhone.setText(product.getContactInfo());
-//       txtEmail.setText(product.getEmail());
-//       txtStartDate.setText(product.getStartDate());
-//       txtTeamInfo.setText(product.getTeamInfo());
-//         
-//    }
-//    
-//    public void addRowInTable(String data[]) {
-//         DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
-//             model.addRow(data);
-//    }
     
     public void addDataToTable() {
         
