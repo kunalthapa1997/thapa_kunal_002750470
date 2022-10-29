@@ -9,7 +9,6 @@ import Model.Encounter;
 import Model.Person;
 import java.awt.CardLayout;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -17,18 +16,19 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author kunal
  */
-public class PatientEncounter extends javax.swing.JPanel {
+public class viewPatientEncounterPanel extends javax.swing.JPanel {
+    
     Person person;
     Admin admin;
     JPanel lowerPanel;
-
     /**
-     * Creates new form Encounter
+     * Creates new form viewPatientEncounterPanel
      */
-    public PatientEncounter(JPanel lowerPanel, Person person) {
+    public viewPatientEncounterPanel(JPanel lowerPanel, Person person, Admin admin) {
         initComponents();
         this.person = person;
         this.lowerPanel = lowerPanel;
+        this.admin = admin;
         loadEncounterTable();
     }
 
@@ -47,6 +47,7 @@ public class PatientEncounter extends javax.swing.JPanel {
         encounterTable = new javax.swing.JTable();
         createEncounterButton = new javax.swing.JButton();
         deleteEncounterButton = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -65,10 +66,6 @@ public class PatientEncounter extends javax.swing.JPanel {
             }
         ));
         jScrollPane1.setViewportView(encounterTable);
-        if (encounterTable.getColumnModel().getColumnCount() > 0) {
-            encounterTable.getColumnModel().getColumn(0).setPreferredWidth(30);
-            encounterTable.getColumnModel().getColumn(2).setPreferredWidth(60);
-        }
 
         createEncounterButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         createEncounterButton.setText("CREATE");
@@ -86,38 +83,52 @@ public class PatientEncounter extends javax.swing.JPanel {
             }
         });
 
+        backButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        backButton.setText("<< BACK");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(createEncounterButton)
+                        .addGap(42, 42, 42)
+                        .addComponent(deleteEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(464, 464, 464)
-                            .addComponent(createEncounterButton)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(deleteEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGap(154, 154, 154)
+                            .addGap(36, 36, 36)
+                            .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(51, 51, 51)
+                            .addComponent(jLabel1))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(137, 137, 137)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(167, 167, 167))
+                .addGap(184, 184, 184))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(deleteEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(createEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                    .addComponent(createEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deleteEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -134,7 +145,7 @@ public class PatientEncounter extends javax.swing.JPanel {
 
     private void createEncounterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createEncounterButtonActionPerformed
         // TODO add your handling code here:
-        CreateEncounter createEncounter = new CreateEncounter(lowerPanel, person);
+        patientEncounterPanel createEncounter = new patientEncounterPanel(lowerPanel, person, admin);
         lowerPanel.add("CreateEncounterPanel",createEncounter);
         CardLayout layout = (CardLayout)lowerPanel.getLayout();
         layout.next(lowerPanel);
@@ -150,12 +161,18 @@ public class PatientEncounter extends javax.swing.JPanel {
             encounterHistory.remove(encounter);
             loadEncounterTable();
     }//GEN-LAST:event_deleteEncounterButtonActionPerformed
-    else {
-            JOptionPane.showMessageDialog(null, "Select a record to Delete");
-        }
-}
+    }
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        patientMainPanel patientPanel = new patientMainPanel(lowerPanel, admin);
+        lowerPanel.add("patientMainPanel",patientPanel);
+        CardLayout layout = (CardLayout)lowerPanel.getLayout();
+        layout.next(lowerPanel);
+    }//GEN-LAST:event_backButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
     private javax.swing.JButton createEncounterButton;
     private javax.swing.JButton deleteEncounterButton;
     private javax.swing.JTable encounterTable;

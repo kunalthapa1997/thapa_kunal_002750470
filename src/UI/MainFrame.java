@@ -9,6 +9,7 @@ import Model.Person;
 import Model.Resident;
 import java.awt.CardLayout;
 import java.util.ArrayList;
+import javax.swing.JPanel;
 
 /**
  *
@@ -20,10 +21,12 @@ public class MainFrame extends javax.swing.JFrame {
      * Creates new form MainFrame
      */
   Admin admin;
-    
+  Person person;
+  
     public MainFrame() {
         initComponents();
         admin = new Admin();
+        person = new Person();
         Resident residence = new Resident("1225","Mission Main","Boston");
         Person person1 = new Person("Kirti",25,"Female", "NA","NA", residence, false, 125.0, 12.0);
         Person person2;
@@ -70,7 +73,7 @@ public class MainFrame extends javax.swing.JFrame {
         homeButton = new javax.swing.JButton();
         commAdminBtn = new javax.swing.JButton();
         adminButton2 = new javax.swing.JButton();
-        adminButton3 = new javax.swing.JButton();
+        patientBtn = new javax.swing.JButton();
         adminButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -139,11 +142,11 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        adminButton3.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        adminButton3.setText("Patient");
-        adminButton3.addActionListener(new java.awt.event.ActionListener() {
+        patientBtn.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        patientBtn.setText("Patient");
+        patientBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminButton3ActionPerformed(evt);
+                patientBtnActionPerformed(evt);
             }
         });
 
@@ -170,7 +173,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(adminButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(adminButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(adminButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(adminButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(patientBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(440, 440, 440))
         );
         homeLowerPanelLayout.setVerticalGroup(
@@ -187,7 +190,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(adminButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(adminButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(patientBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(94, Short.MAX_VALUE))
         );
 
@@ -248,9 +251,13 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButton2ActionPerformed
 
-    private void adminButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButton3ActionPerformed
+    private void patientBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_adminButton3ActionPerformed
+        patientLoginPanel patientWindow = new patientLoginPanel(lowerPanel, admin);
+        lowerPanel.add("patientLoginPanel", patientWindow);
+        CardLayout layout = (CardLayout)lowerPanel.getLayout();
+        layout.next(lowerPanel);
+    }//GEN-LAST:event_patientBtnActionPerformed
 
     private void adminButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButton4ActionPerformed
         // TODO add your handling code here:
@@ -294,7 +301,6 @@ public class MainFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adminButton;
     private javax.swing.JButton adminButton2;
-    private javax.swing.JButton adminButton3;
     private javax.swing.JButton adminButton4;
     private javax.swing.JButton commAdminBtn;
     private javax.swing.JButton homeButton;
@@ -303,6 +309,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel lowerPanel;
+    private javax.swing.JButton patientBtn;
     private javax.swing.JPanel upperPanel;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,6 +8,7 @@ import Model.Admin;
 import Model.Person;
 import Model.Resident;
 import java.awt.CardLayout;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -19,16 +20,15 @@ import javax.swing.table.DefaultTableModel;
 public class communityMainPanel extends javax.swing.JPanel {
     Admin admin;
     JPanel lowerPanel;
-//    MainFrame mainFrame;
+    private ArrayList<Person> personDir;
     /**
      * Creates new form communityMainPanel
      */
     public communityMainPanel(JPanel lowerPanel, Admin admin) {
         initComponents();
-        this.lowerPanel =lowerPanel;
+        this.lowerPanel = lowerPanel;
         this.admin = admin;
         loadPersonTable();
-//        this.mainFrame = mainFrame;
     }
 
     /**
@@ -163,11 +163,11 @@ public class communityMainPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-//        lowerPanel.add("homeLowerPanel",homeLowerPanel);
-//        MainFrame backFrame = new MainFrame();
-//        lowerPanel.add("homeLowerPanel",backFrame);
-//        CardLayout layout = (CardLayout)lowerPanel.getLayout();
-//        layout.next(lowerPanel);
+        this.personDir = admin.getPersonDirectory();
+        commonHomeScreenPanel commonHomeScreenPanel = new commonHomeScreenPanel(lowerPanel, personDir); 
+        lowerPanel.add("commonHomeScreenPanel", commonHomeScreenPanel);
+        CardLayout cardLayout = (CardLayout) lowerPanel.getLayout();
+        cardLayout.next(lowerPanel);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
