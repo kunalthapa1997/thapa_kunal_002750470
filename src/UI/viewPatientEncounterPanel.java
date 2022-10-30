@@ -56,13 +56,13 @@ public class viewPatientEncounterPanel extends javax.swing.JPanel {
 
         encounterTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Encounter Name", "Time Slot", "Vital Sign", "Consulting Doctor"
+                "Encounter Name", "Time Slot", "Vital Sign", "Consulting Doctor", "Symptoms", "Diagnosis", "Medicines"
             }
         ));
         jScrollPane1.setViewportView(encounterTable);
@@ -96,21 +96,22 @@ public class viewPatientEncounterPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(createEncounterButton)
-                        .addGap(42, 42, 42)
-                        .addComponent(deleteEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(createEncounterButton)
+                            .addGap(42, 42, 42)
+                            .addComponent(deleteEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(36, 36, 36)
                             .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(51, 51, 51)
-                            .addComponent(jLabel1))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(137, 137, 137)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(184, 184, 184))
+                            .addComponent(jLabel1)
+                            .addGap(33, 33, 33)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(48, 48, 48))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,11 +189,14 @@ private void loadEncounterTable() {
             model.removeRow(i);
         }
         for (Model.Encounter e : person.getEncounterHistory()) {
-            Object row[] = new Object[4];
+            Object row[] = new Object[7];
             row[0] = e;
             row[1] = e.getTimeSlot();
             row[2] = e.getVitalsign();
             row[3]  = e.getDoctor();
+            row[4] = e.getSymptoms();
+            row[5] = e.getDiagnosis();
+            row[6] = e.getMedicine();
             model.addRow(row);
         }
     }

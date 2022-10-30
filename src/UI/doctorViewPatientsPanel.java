@@ -17,15 +17,15 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author kunal
  */
-public final class patientMainPanel extends javax.swing.JPanel {
+public class doctorViewPatientsPanel extends javax.swing.JPanel {
     Person person;
     Admin admin;
     JPanel lowerPanel;
     private ArrayList<Person> patientDir;
     /**
-     * Creates new form patientMainPanel
+     * Creates new form doctorViewPatientsPanel
      */
-    public patientMainPanel(JPanel lowerPanel, Admin admin) {
+    public doctorViewPatientsPanel(JPanel lowerPanel, Admin admin) {
         initComponents();
         this.lowerPanel =lowerPanel;
         this.admin = admin;
@@ -116,16 +116,17 @@ public final class patientMainPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(updatePatientButton)
                 .addGap(173, 173, 173))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personPanelLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(backButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(237, 237, 237))
             .addGroup(personPanelLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(personPanelLayout.createSequentialGroup()
+                        .addComponent(backButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addGap(237, 237, 237))
+                    .addGroup(personPanelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(29, Short.MAX_VALUE))))
         );
         personPanelLayout.setVerticalGroup(
             personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,7 +136,7 @@ public final class patientMainPanel extends javax.swing.JPanel {
                         .addGap(43, 43, 43)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(personPanelLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
+                        .addGap(23, 23, 23)
                         .addComponent(backButton)))
                 .addGap(44, 44, 44)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -143,7 +144,7 @@ public final class patientMainPanel extends javax.swing.JPanel {
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(viewEncounterButton)
                     .addComponent(updatePatientButton))
-                .addContainerGap(447, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -175,8 +176,8 @@ public final class patientMainPanel extends javax.swing.JPanel {
             return;
         }
         Person person = (Person)patientTable.getValueAt(row, 1);
-        viewPatientEncounterPanel viewEncounterJPanel = new viewPatientEncounterPanel(lowerPanel, person, admin);
-        lowerPanel.add("EncounterPanel",viewEncounterJPanel);
+        doctorViewEncountersPanel doctorViewEncountersPanel = new doctorViewEncountersPanel(lowerPanel, person, admin);
+        lowerPanel.add("doctorViewEncountersPanel",doctorViewEncountersPanel);
         CardLayout layout = (CardLayout)lowerPanel.getLayout();
         layout.next(lowerPanel);
     }//GEN-LAST:event_viewEncounterButtonActionPerformed
@@ -195,7 +196,7 @@ public final class patientMainPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Select a record!");
         }
     }//GEN-LAST:event_updatePatientButtonActionPerformed
- 
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
@@ -207,7 +208,7 @@ public final class patientMainPanel extends javax.swing.JPanel {
     private javax.swing.JButton viewEncounterButton;
     // End of variables declaration//GEN-END:variables
 
-    public void loadPatientTable() {
+public void loadPatientTable() {
         int rowCount = patientTable.getRowCount();
         ArrayList<Person> patientDirectory = new ArrayList<>();
 
@@ -239,6 +240,4 @@ public final class patientMainPanel extends javax.swing.JPanel {
             model.addRow(row);
 }
 }
-    
 }
-

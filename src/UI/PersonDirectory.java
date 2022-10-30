@@ -334,7 +334,7 @@ public class PersonDirectory extends javax.swing.JPanel {
 
     private void createPersonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createPersonButtonActionPerformed
         // TODO add your handling code here:
-        AddPersonData addPersonJPanel = new AddPersonData(admin);
+        AddPersonData addPersonJPanel = new AddPersonData(lowerPanel, admin);
         lowerPanel.add("AddPersonJPanel",addPersonJPanel);
         CardLayout layout = (CardLayout)lowerPanel.getLayout();
         layout.next(lowerPanel);

@@ -4,17 +4,24 @@
  */
 package UI;
 
+import Model.Admin;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author kunal
  */
 public class doctorLoginPanel extends javax.swing.JPanel {
-
+    JPanel lowerPanel;
+    Admin admin;
     /**
      * Creates new form doctorLoginPanel
      */
-    public doctorLoginPanel() {
+    public doctorLoginPanel(JPanel lowerPanel, Admin admin) {
         initComponents();
+        this.lowerPanel= lowerPanel;
+        this.admin = admin;
     }
 
     /**
@@ -186,6 +193,10 @@ public class doctorLoginPanel extends javax.swing.JPanel {
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
+        doctorViewPatientsPanel doctorViewPatientsPanel = new doctorViewPatientsPanel(lowerPanel, admin);
+        lowerPanel.add("doctorViewPatientsPanel", doctorViewPatientsPanel);
+        CardLayout layout = (CardLayout)lowerPanel.getLayout();
+        layout.next(lowerPanel);
     }//GEN-LAST:event_loginBtnActionPerformed
 
 

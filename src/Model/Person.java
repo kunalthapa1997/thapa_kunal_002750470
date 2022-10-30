@@ -147,7 +147,4 @@ public class Person {
     public void setEncounterHistory(ArrayList<Encounter> encounterHistory) {
         this.encounterHistory = encounterHistory;
     }
-
- 
-    
 }

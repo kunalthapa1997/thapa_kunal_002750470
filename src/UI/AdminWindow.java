@@ -5,7 +5,9 @@
 package UI;
 
 import Model.Admin;
+import Model.Person;
 import java.awt.CardLayout;
+import java.util.ArrayList;
 import javax.swing.JPanel;
 
 /**
@@ -15,6 +17,7 @@ import javax.swing.JPanel;
 public class AdminWindow extends javax.swing.JPanel {
     Admin admin;
     JPanel lowerPanel;
+    private ArrayList<Person> patientDir;
     /**
      * Creates new form AdminWindow
      */
@@ -110,10 +113,11 @@ public class AdminWindow extends javax.swing.JPanel {
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-        Home homePanel = new Home(lowerPanel);
-        lowerPanel.add("HomePanel",homePanel);
-        CardLayout layout = (CardLayout)lowerPanel.getLayout();
-        layout.next(lowerPanel);
+        this.patientDir = admin.getPatientDirectory();
+        commonHomeScreenPanel commonHomeScreenPanel = new commonHomeScreenPanel(lowerPanel, patientDir); 
+        lowerPanel.add("commonHomeScreenPanel", commonHomeScreenPanel);
+        CardLayout cardLayout = (CardLayout) lowerPanel.getLayout();
+        cardLayout.next(lowerPanel);
                                 
     }//GEN-LAST:event_backButtonActionPerformed
 

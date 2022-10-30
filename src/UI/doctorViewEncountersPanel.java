@@ -4,17 +4,33 @@
  */
 package UI;
 
+import Model.Admin;
+import Model.Encounter;
+import Model.Person;
+import java.awt.CardLayout;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author kunal
  */
 public class doctorViewEncountersPanel extends javax.swing.JPanel {
 
+    Person person;
+    Admin admin;
+    JPanel lowerPanel;
     /**
      * Creates new form doctorViewEncountersPanel
      */
-    public doctorViewEncountersPanel() {
+    public doctorViewEncountersPanel(JPanel lowerPanel, Person person, Admin admin) {
         initComponents();
+        this.person = person;
+        this.lowerPanel = lowerPanel;
+        this.admin = admin;
+        loadEncounterTable();
     }
 
     /**
@@ -26,19 +42,170 @@ public class doctorViewEncountersPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        encounterTable = new javax.swing.JTable();
+        editEncounterButton = new javax.swing.JButton();
+        deleteEncounterButton = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel1.setText("MAINTAIN PATIENT ENCOUNTER");
+
+        encounterTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Encounter Name", "Time Slot", "Vital Sign", "Consulting Doctor", "Symptoms", "Diagnosis", "Medicines"
+            }
+        ));
+        jScrollPane1.setViewportView(encounterTable);
+
+        editEncounterButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        editEncounterButton.setText("EDIT ENCOUNTER");
+        editEncounterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editEncounterButtonActionPerformed(evt);
+            }
+        });
+
+        deleteEncounterButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        deleteEncounterButton.setText("DELETE");
+        deleteEncounterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteEncounterButtonActionPerformed(evt);
+            }
+        });
+
+        backButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        backButton.setText("<< BACK");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(editEncounterButton)
+                            .addGap(42, 42, 42)
+                            .addComponent(deleteEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(51, 51, 51)
+                            .addComponent(jLabel1)
+                            .addGap(33, 33, 33)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 776, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(editEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deleteEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void editEncounterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEncounterButtonActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow;
+        selectedRow = encounterTable.getSelectedRow();
+        if (!(selectedRow < 0)) {
+            Encounter encounter = (Encounter) encounterTable.getValueAt(selectedRow, 0);
+            doctorEncounterPanel doctorEncounterPanel = new doctorEncounterPanel(lowerPanel, encounter, admin, person);
+            lowerPanel.add("doctorEncounterPanel", doctorEncounterPanel);
+            CardLayout cardLayout = (CardLayout) lowerPanel.getLayout();
+            cardLayout.next(lowerPanel);
+        } else {
+            JOptionPane.showMessageDialog(null, "Select a record!");
+        }
+    }//GEN-LAST:event_editEncounterButtonActionPerformed
+
+    private void deleteEncounterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteEncounterButtonActionPerformed
+        // TODO add your handling code here:
+        int selectedRow;
+        selectedRow = encounterTable.getSelectedRow();
+        if (!(selectedRow < 0)) {
+            Encounter encounter = (Encounter) encounterTable.getValueAt(selectedRow, 0);
+            ArrayList<Encounter> encounterHistory = person.getEncounterHistory();
+            encounterHistory.remove(encounter);
+            loadEncounterTable();
+    }//GEN-LAST:event_deleteEncounterButtonActionPerformed
+    }
+    
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        patientMainPanel patientPanel = new patientMainPanel(lowerPanel, admin);
+        lowerPanel.add("patientMainPanel",patientPanel);
+        CardLayout layout = (CardLayout)lowerPanel.getLayout();
+        layout.next(lowerPanel);
+    }//GEN-LAST:event_backButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
+    private javax.swing.JButton deleteEncounterButton;
+    private javax.swing.JButton editEncounterButton;
+    private javax.swing.JTable encounterTable;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+private void loadEncounterTable() {
+        int rowCount = encounterTable.getRowCount();
+        DefaultTableModel model = (DefaultTableModel) encounterTable.getModel();
+        for(int i=rowCount-1;i>=0;i--){
+            model.removeRow(i);
+        }
+        for (Model.Encounter e : person.getEncounterHistory()) {
+            Object row[] = new Object[7];
+            row[0] = e;
+            row[1] = e.getTimeSlot();
+            row[2] = e.getVitalsign();
+            row[3] = e.getDoctor();
+            row[4] = e.getSymptoms();
+            row[5] = e.getDiagnosis();
+            row[6] = e.getMedicine();
+            model.addRow(row);
+        }
+    }
 }

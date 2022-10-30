@@ -23,9 +23,10 @@ public class AddPersonData extends javax.swing.JPanel {
     /**
      * Creates new form AddPersonData
      */
-    public AddPersonData(Admin admin) {
+    public AddPersonData(JPanel lowerPanel, Admin admin) {
         initComponents();
         this.admin = admin;
+        this.lowerPanel = lowerPanel;
     }
 
     /**
