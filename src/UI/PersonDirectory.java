@@ -5,6 +5,7 @@
 package UI;
 
 import Model.Admin;
+import Model.Doctor;
 import Model.Person;
 import Model.Resident;
 //import UpdatePersonDirectory;
@@ -21,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
 public class PersonDirectory extends javax.swing.JPanel {
     JPanel lowerPanel;
     Admin admin;
+    Doctor doctor;
     /**
      * Creates new form PersonDirectory
      */
@@ -28,6 +30,7 @@ public class PersonDirectory extends javax.swing.JPanel {
         initComponents();
         this.admin = admin;
         this.lowerPanel = lowerPanel;
+        doctor = new Doctor();
         loadPersonTable();
         loadPatientTable();
     }
@@ -55,6 +58,7 @@ public class PersonDirectory extends javax.swing.JPanel {
         viewEncounterButton = new javax.swing.JButton();
         updatePatientButton = new javax.swing.JButton();
         deletePatientButton = new javax.swing.JButton();
+        createDoctorButton = new javax.swing.JButton();
 
         personPanel.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -220,6 +224,14 @@ public class PersonDirectory extends javax.swing.JPanel {
             }
         });
 
+        createDoctorButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        createDoctorButton.setText("CREATE NEW DOCTOR");
+        createDoctorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createDoctorButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout personPanelLayout = new javax.swing.GroupLayout(personPanel);
         personPanel.setLayout(personPanelLayout);
         personPanelLayout.setHorizontalGroup(
@@ -247,8 +259,10 @@ public class PersonDirectory extends javax.swing.JPanel {
                                 .addComponent(jLabel1))
                             .addGroup(personPanelLayout.createSequentialGroup()
                                 .addGap(39, 39, 39)
-                                .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(personPanelLayout.createSequentialGroup()
+                                        .addComponent(createDoctorButton)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(createPersonButton)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(updatePersonButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -275,7 +289,8 @@ public class PersonDirectory extends javax.swing.JPanel {
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deletePersonButton)
                     .addComponent(updatePersonButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(createPersonButton))
+                    .addComponent(createPersonButton)
+                    .addComponent(createDoctorButton))
                 .addGap(53, 53, 53)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -390,9 +405,18 @@ public class PersonDirectory extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_updatePatientButtonActionPerformed
 
+    private void createDoctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createDoctorButtonActionPerformed
+        // TODO add your handling code here:
+        createDoctor createDoctor = new createDoctor(lowerPanel, doctor);
+        lowerPanel.add("AddPersonJPanel",createDoctor);
+        CardLayout layout = (CardLayout)lowerPanel.getLayout();
+        layout.next(lowerPanel);
+    }//GEN-LAST:event_createDoctorButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
+    private javax.swing.JButton createDoctorButton;
     private javax.swing.JButton createPersonButton;
     private javax.swing.JButton deletePatientButton;
     private javax.swing.JButton deletePersonButton;

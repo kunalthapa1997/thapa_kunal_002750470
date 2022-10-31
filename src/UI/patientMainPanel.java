@@ -113,9 +113,9 @@ public final class patientMainPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(viewEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(35, 35, 35)
                 .addComponent(updatePatientButton)
-                .addGap(173, 173, 173))
+                .addGap(156, 156, 156))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personPanelLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(backButton)
@@ -187,8 +187,8 @@ public final class patientMainPanel extends javax.swing.JPanel {
         selectedRow = patientTable.getSelectedRow();
         if (!(selectedRow < 0)) {
             Person person = (Person) patientTable.getValueAt(selectedRow, 1);
-            UpdatePersonDirectory editPersonPanel = new UpdatePersonDirectory(lowerPanel, person, admin);
-            lowerPanel.add("EditPersonPanel", editPersonPanel);
+            patientUpdatePatient patientUpdatePatient = new patientUpdatePatient(lowerPanel, person, admin);
+            lowerPanel.add("patientUpdatePatient", patientUpdatePatient);
             CardLayout cardLayout = (CardLayout) lowerPanel.getLayout();
             cardLayout.next(lowerPanel);
         } else {

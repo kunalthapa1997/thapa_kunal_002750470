@@ -48,6 +48,7 @@ public class doctorViewPatientsPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         viewEncounterButton = new javax.swing.JButton();
         updatePatientButton = new javax.swing.JButton();
+        createPatientButton = new javax.swing.JButton();
 
         personPanel.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -106,14 +107,24 @@ public class doctorViewPatientsPanel extends javax.swing.JPanel {
             }
         });
 
+        createPatientButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        createPatientButton.setText("CREATE PATIENT");
+        createPatientButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createPatientButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout personPanelLayout = new javax.swing.GroupLayout(personPanel);
         personPanel.setLayout(personPanelLayout);
         personPanelLayout.setHorizontalGroup(
             personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(createPatientButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61)
                 .addComponent(viewEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(53, 53, 53)
                 .addComponent(updatePatientButton)
                 .addGap(173, 173, 173))
             .addGroup(personPanelLayout.createSequentialGroup()
@@ -143,7 +154,8 @@ public class doctorViewPatientsPanel extends javax.swing.JPanel {
                 .addGap(42, 42, 42)
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(viewEncounterButton)
-                    .addComponent(updatePatientButton))
+                    .addComponent(updatePatientButton)
+                    .addComponent(createPatientButton))
                 .addContainerGap(91, Short.MAX_VALUE))
         );
 
@@ -188,8 +200,8 @@ public class doctorViewPatientsPanel extends javax.swing.JPanel {
         selectedRow = patientTable.getSelectedRow();
         if (!(selectedRow < 0)) {
             Person person = (Person) patientTable.getValueAt(selectedRow, 1);
-            UpdatePersonDirectory editPersonPanel = new UpdatePersonDirectory(lowerPanel, person, admin);
-            lowerPanel.add("EditPersonPanel", editPersonPanel);
+            doctorUpdatePatient doctorUpdatePatient = new doctorUpdatePatient(lowerPanel, person, admin);
+            lowerPanel.add("doctorUpdatePatient", doctorUpdatePatient);
             CardLayout cardLayout = (CardLayout) lowerPanel.getLayout();
             cardLayout.next(lowerPanel);
         } else {
@@ -197,9 +209,18 @@ public class doctorViewPatientsPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_updatePatientButtonActionPerformed
 
+    private void createPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createPatientButtonActionPerformed
+        // TODO add your handling code here:
+        doctorAddPatient doctorAddPatient = new doctorAddPatient(lowerPanel, admin);
+        lowerPanel.add("doctorAddPatient",doctorAddPatient);
+        CardLayout layout = (CardLayout)lowerPanel.getLayout();
+        layout.next(lowerPanel);
+    }//GEN-LAST:event_createPatientButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
+    private javax.swing.JButton createPatientButton;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable patientTable;

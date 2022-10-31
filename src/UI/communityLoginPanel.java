@@ -6,6 +6,7 @@ package UI;
 
 import Model.Admin;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -206,14 +207,23 @@ public class communityLoginPanel extends javax.swing.JPanel {
 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
         // TODO add your handling code here:
+        usernameTxt.setText("");
+        passwordTxt.setText("");
     }//GEN-LAST:event_clearBtnActionPerformed
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
-        communityMainPanel commMainWindow = new communityMainPanel(lowerPanel, admin);
-        lowerPanel.add("communityMainPanel", commMainWindow);
-        CardLayout layout = (CardLayout)lowerPanel.getLayout();
-        layout.next(lowerPanel);
+        String userName = usernameTxt.getText();
+        String password = passwordTxt.getText();
+        
+        if(userName.equals("comadmin") && password.equals("compassword")) {
+            communityMainPanel commMainWindow = new communityMainPanel(lowerPanel, admin);
+            lowerPanel.add("communityMainPanel", commMainWindow);
+            CardLayout layout = (CardLayout)lowerPanel.getLayout();
+            layout.next(lowerPanel);
+        } else {
+             JOptionPane.showMessageDialog(null, "Please enter correct username/password", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_loginBtnActionPerformed
 
 

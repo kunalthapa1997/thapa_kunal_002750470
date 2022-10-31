@@ -411,7 +411,6 @@ private void getEncounterDetails() {
         symptomsTF.setText(String.valueOf(encounter.getSymptoms()));
         diagnosisTF.setText(String.valueOf(encounter.getDiagnosis()));
         medicineTF.setText(String.valueOf(encounter.getMedicine()));
-
 //        saveDetailsButton.setEnabled(false);
     }
 

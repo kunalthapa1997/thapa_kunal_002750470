@@ -7,6 +7,7 @@ package UI;
 import Model.Admin;
 import Model.Person;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -199,14 +200,23 @@ public class patientLoginPanel extends javax.swing.JPanel {
 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
         // TODO add your handling code here:
+        usernameTxt.setText("");
+        passwordTxt.setText("");
     }//GEN-LAST:event_clearBtnActionPerformed
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
-        patientMainPanel patientMainWindow = new patientMainPanel(lowerPanel, admin);
-        lowerPanel.add("patientMainPanel", patientMainWindow);
-        CardLayout layout = (CardLayout)lowerPanel.getLayout();
-        layout.next(lowerPanel);
+        String userName = usernameTxt.getText();
+        String password = passwordTxt.getText();
+        
+        if(userName.equals("patadmin") && password.equals("patpassword")) {
+            patientMainPanel patientMainWindow = new patientMainPanel(lowerPanel, admin);
+            lowerPanel.add("patientMainPanel", patientMainWindow);
+            CardLayout layout = (CardLayout)lowerPanel.getLayout();
+            layout.next(lowerPanel);
+        } else {
+             JOptionPane.showMessageDialog(null, "Please enter correct username/password", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_loginBtnActionPerformed
 
 

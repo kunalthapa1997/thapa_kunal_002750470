@@ -38,7 +38,6 @@ public class AdminWindow extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         personDirectoryButton = new javax.swing.JButton();
-        patientDirectoryButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
@@ -48,14 +47,6 @@ public class AdminWindow extends javax.swing.JPanel {
         personDirectoryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personDirectoryButtonActionPerformed(evt);
-            }
-        });
-
-        patientDirectoryButton.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        patientDirectoryButton.setText("ABNORMAL CASES");
-        patientDirectoryButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                patientDirectoryButtonActionPerformed(evt);
             }
         });
 
@@ -74,8 +65,7 @@ public class AdminWindow extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(0, 268, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(personDirectoryButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(patientDirectoryButton, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(personDirectoryButton, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
                     .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(257, Short.MAX_VALUE))
         );
@@ -84,11 +74,9 @@ public class AdminWindow extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(121, 121, 121)
                 .addComponent(personDirectoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(patientDirectoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addGap(46, 46, 46)
                 .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -102,14 +90,6 @@ public class AdminWindow extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void patientDirectoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientDirectoryButtonActionPerformed
-        // TODO add your handling code here:
-        PatientDirectory patientPanel = new PatientDirectory(lowerPanel, admin);
-        lowerPanel.add("PatientPanel",patientPanel);
-        CardLayout layout = (CardLayout)lowerPanel.getLayout();
-        layout.next(lowerPanel);
-    }//GEN-LAST:event_patientDirectoryButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
@@ -133,7 +113,6 @@ public class AdminWindow extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton patientDirectoryButton;
     private javax.swing.JButton personDirectoryButton;
     // End of variables declaration//GEN-END:variables
 

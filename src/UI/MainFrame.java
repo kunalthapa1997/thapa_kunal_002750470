@@ -225,8 +225,8 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed
         // TODO add your handling code here:
-        AdminWindow adminWindow = new AdminWindow(lowerPanel, admin);
-        lowerPanel.add("AdminWindow", adminWindow);
+        systemAdminLoginPanel systemAdminLoginPanel = new systemAdminLoginPanel(lowerPanel, admin);
+        lowerPanel.add("systemAdminLoginPanel", systemAdminLoginPanel);
         CardLayout layout = (CardLayout)lowerPanel.getLayout();
         layout.next(lowerPanel);
     }//GEN-LAST:event_adminButtonActionPerformed
