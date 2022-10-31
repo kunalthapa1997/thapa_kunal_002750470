@@ -138,7 +138,7 @@ public class communityLoginPanel extends javax.swing.JPanel {
                         .addComponent(clearBtn)
                         .addGap(48, 48, 48)
                         .addComponent(loginBtn)
-                        .addGap(113, 113, 113))
+                        .addGap(63, 63, 63))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -155,9 +155,8 @@ public class communityLoginPanel extends javax.swing.JPanel {
                                 .addGap(35, 35, 35)
                                 .addComponent(usernameLbl)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(50, 50, 50)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                                .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -8,6 +8,7 @@ import Model.Admin;
 import Model.Person;
 import Model.Resident;
 import java.awt.CardLayout;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -17,13 +18,14 @@ import javax.swing.JPanel;
  *
  * @author kunal
  */
-public class doctorAddPatient extends javax.swing.JPanel {
+public class hospitalCreatePateintPanel extends javax.swing.JPanel {
     private JPanel lowerPanel;
     Admin admin;
+    private ArrayList<Person> patientDir;
     /**
-     * Creates new form doctorAddPatient
+     * Creates new form hospitalCreatePateintPanel
      */
-    public doctorAddPatient(JPanel lowerPanel, Admin admin) {
+    public hospitalCreatePateintPanel(JPanel lowerPanel, Admin admin) {
         initComponents();
         this.admin = admin;
         this.lowerPanel = lowerPanel;
@@ -74,7 +76,7 @@ public class doctorAddPatient extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("ADD NEW PATIENT");
-        addPersonPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, -1, -1));
+        addPersonPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel3.setText("NAME :");
@@ -273,8 +275,8 @@ public class doctorAddPatient extends javax.swing.JPanel {
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-        doctorViewPatientsPanel doctorViewPatientsPanel = new doctorViewPatientsPanel(lowerPanel, admin);
-        lowerPanel.add("doctorViewPatientsPanel",doctorViewPatientsPanel);
+        hospitalPatientPanel hospitalPatientPanel = new hospitalPatientPanel(lowerPanel, admin);
+        lowerPanel.add("hospitalPatientPanel",hospitalPatientPanel);
         CardLayout layout = (CardLayout)lowerPanel.getLayout();
         layout.next(lowerPanel);
     }//GEN-LAST:event_backButtonActionPerformed

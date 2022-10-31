@@ -7,6 +7,7 @@ package UI;
 import Model.Admin;
 import Model.Person;
 import java.awt.CardLayout;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JPanel;
@@ -20,6 +21,7 @@ public class updatePersonByCommunityPanel extends javax.swing.JPanel {
     private JPanel lowerPanel;
     Person person;
     Admin admin;
+    private ArrayList<Person> patientDir;
     /**
      * Creates new form updatePersonByCommunityPanel
      */

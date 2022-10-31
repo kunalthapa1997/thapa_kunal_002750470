@@ -39,21 +39,23 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="464" max="-2" attributes="0"/>
-                          <Component id="createEncounterButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                          <Component id="deleteEncounterButton" min="-2" pref="85" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" pref="794" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="365" max="-2" attributes="0"/>
+                                  <Component id="createEncounterButton" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                  <Component id="deleteEncounterButton" min="-2" pref="85" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPane1" min="-2" pref="655" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                  <EmptySpace pref="597" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -62,9 +64,9 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="48" pref="48" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="38" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="149" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="deleteEncounterButton" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
                       <Component id="createEncounterButton" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>

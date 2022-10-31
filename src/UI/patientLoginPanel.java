@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 public class patientLoginPanel extends javax.swing.JPanel {
     JPanel lowerPanel;
     Admin admin;
+    private ArrayList<Person> patientDir;
 //    private ArrayList<Person> patientData;
     
     /**
@@ -137,28 +138,27 @@ public class patientLoginPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(rightPanelLbl)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(151, 151, 151)
-                            .addComponent(clearBtn)
-                            .addGap(43, 43, 43)
-                            .addComponent(loginBtn))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(passwordLbl)
-                            .addGap(18, 18, 18)
-                            .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(passwordLbl)
+                        .addGap(18, 18, 18)
+                        .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addComponent(usernameLbl)
                         .addGap(18, 18, 18)
-                        .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(204, 204, 204)
+                        .addComponent(clearBtn)
+                        .addGap(40, 40, 40)
+                        .addComponent(loginBtn)))
                 .addContainerGap(63, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(rightPanelLbl)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,11 +173,11 @@ public class patientLoginPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passwordLbl)
                     .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(67, 67, 67)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clearBtn)
                     .addComponent(loginBtn))
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -222,7 +222,7 @@ public class patientLoginPanel extends javax.swing.JPanel {
                     if(patient.getId() == p.getId()){
                       if(password.equals(p.getPassword())) {
                           System.out.println("CORRECT USERNAME AND PASSWORD");
-                            patientMainPanel patientMainWindow = new patientMainPanel(lowerPanel, admin);
+                            patientMainPanel patientMainWindow = new patientMainPanel(lowerPanel, admin, p.getId(), p.getPassword());
                             lowerPanel.add("patientMainPanel", patientMainWindow);
                             CardLayout layout = (CardLayout)lowerPanel.getLayout();
                             layout.next(lowerPanel);

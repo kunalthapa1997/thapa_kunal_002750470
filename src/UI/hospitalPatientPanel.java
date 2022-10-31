@@ -17,22 +17,18 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author kunal
  */
-public final class patientMainPanel extends javax.swing.JPanel {
+public class hospitalPatientPanel extends javax.swing.JPanel {
     Person person;
     Admin admin;
     JPanel lowerPanel;
     private ArrayList<Person> patientDir;
-    int userName;
-    String passWord;
     /**
-     * Creates new form patientMainPanel
+     * Creates new form hospitalPatientPanel
      */
-    public patientMainPanel(JPanel lowerPanel, Admin admin, int username, String password) {
+    public hospitalPatientPanel(JPanel lowerPanel, Admin admin) {
         initComponents();
         this.lowerPanel =lowerPanel;
         this.admin = admin;
-        this.userName = username;
-        this.passWord = password;
         loadPatientTable();
     }
 
@@ -52,6 +48,7 @@ public final class patientMainPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         viewEncounterButton = new javax.swing.JButton();
         updatePatientButton = new javax.swing.JButton();
+        createPatientButton = new javax.swing.JButton();
 
         personPanel.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -110,28 +107,35 @@ public final class patientMainPanel extends javax.swing.JPanel {
             }
         });
 
+        createPatientButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        createPatientButton.setText("CREATE PATIENT");
+        createPatientButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createPatientButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout personPanelLayout = new javax.swing.GroupLayout(personPanel);
         personPanel.setLayout(personPanelLayout);
         personPanelLayout.setHorizontalGroup(
             personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personPanelLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(backButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(237, 237, 237))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(createPatientButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61)
+                .addComponent(viewEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
+                .addComponent(updatePatientButton)
+                .addGap(173, 173, 173))
             .addGroup(personPanelLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(27, 27, 27)
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(personPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(viewEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(updatePatientButton)
-                        .addGap(156, 156, 156))
-                    .addGroup(personPanelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(43, Short.MAX_VALUE))))
+                        .addComponent(backButton)
+                        .addGap(121, 121, 121)
+                        .addComponent(jLabel2))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         personPanelLayout.setVerticalGroup(
             personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,15 +145,16 @@ public final class patientMainPanel extends javax.swing.JPanel {
                         .addGap(43, 43, 43)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(personPanelLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
+                        .addGap(23, 23, 23)
                         .addComponent(backButton)))
                 .addGap(44, 44, 44)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(viewEncounterButton)
-                    .addComponent(updatePatientButton))
-                .addContainerGap(447, Short.MAX_VALUE))
+                    .addComponent(updatePatientButton)
+                    .addComponent(createPatientButton))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -181,30 +186,39 @@ public final class patientMainPanel extends javax.swing.JPanel {
             return;
         }
         Person person = (Person)patientTable.getValueAt(row, 1);
-        viewPatientEncounterPanel viewEncounterJPanel = new viewPatientEncounterPanel(lowerPanel, person, admin, person.getId(), person.getPassword());
-        lowerPanel.add("EncounterPanel",viewEncounterJPanel);
+        hospitalViewEncounterPanel hospitalViewEncounterPanel = new hospitalViewEncounterPanel(lowerPanel, person, admin);
+        lowerPanel.add("hospitalViewEncounterPanel",hospitalViewEncounterPanel);
         CardLayout layout = (CardLayout)lowerPanel.getLayout();
         layout.next(lowerPanel);
     }//GEN-LAST:event_viewEncounterButtonActionPerformed
 
     private void updatePatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePatientButtonActionPerformed
         // TODO add your handling code here:
-        int selectedRow;
+         int selectedRow;
         selectedRow = patientTable.getSelectedRow();
         if (!(selectedRow < 0)) {
             Person person = (Person) patientTable.getValueAt(selectedRow, 1);
-            patientUpdatePatient patientUpdatePatient = new patientUpdatePatient(lowerPanel, person, admin, person.getId(), person.getPassword());
-            lowerPanel.add("patientUpdatePatient", patientUpdatePatient);
+            hospitalEditPateintPanel hospitalEditPateintPanel = new hospitalEditPateintPanel(lowerPanel, person, admin);
+            lowerPanel.add("hospitalEditPateintPanel", hospitalEditPateintPanel);
             CardLayout cardLayout = (CardLayout) lowerPanel.getLayout();
             cardLayout.next(lowerPanel);
         } else {
             JOptionPane.showMessageDialog(null, "Select a record!");
         }
     }//GEN-LAST:event_updatePatientButtonActionPerformed
- 
+
+    private void createPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createPatientButtonActionPerformed
+        // TODO add your handling code here:
+        hospitalCreatePateintPanel hospitalCreatePateintPanel = new hospitalCreatePateintPanel(lowerPanel, admin);
+        lowerPanel.add("hospitalCreatePatientPanel",hospitalCreatePateintPanel);
+        CardLayout layout = (CardLayout)lowerPanel.getLayout();
+        layout.next(lowerPanel);
+    }//GEN-LAST:event_createPatientButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
+    private javax.swing.JButton createPatientButton;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable patientTable;
@@ -213,7 +227,7 @@ public final class patientMainPanel extends javax.swing.JPanel {
     private javax.swing.JButton viewEncounterButton;
     // End of variables declaration//GEN-END:variables
 
-    public void loadPatientTable() {
+public void loadPatientTable() {
         int rowCount = patientTable.getRowCount();
         ArrayList<Person> patientDirectory = new ArrayList<>();
 
@@ -224,9 +238,7 @@ public final class patientMainPanel extends javax.swing.JPanel {
         for (Person p : admin.getPersonDirectory()) {
         if (p.isIsPatient()==true){
         System.out.println(p.isIsPatient());
-        if(p.getId() == userName && passWord.equals(p.getPassword())) {
-             patientDirectory.add(p);
-        }
+            patientDirectory.add(p);
             }
         }
         admin.setPatientDirectory(patientDirectory);
@@ -247,6 +259,4 @@ public final class patientMainPanel extends javax.swing.JPanel {
             model.addRow(row);
 }
 }
-    
 }
-

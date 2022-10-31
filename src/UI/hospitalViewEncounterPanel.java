@@ -16,23 +16,19 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author kunal
  */
-public class viewPatientEncounterPanel extends javax.swing.JPanel {
-    
+public class hospitalViewEncounterPanel extends javax.swing.JPanel {
     Person person;
     Admin admin;
-    JPanel lowerPanel;
-    int userName;
-    String passWord;
+    JPanel lowerPanel; 
+    private ArrayList<Person> patientDir;
     /**
-     * Creates new form viewPatientEncounterPanel
+     * Creates new form hospitalViewEncounterPanel
      */
-    public viewPatientEncounterPanel(JPanel lowerPanel, Person person, Admin admin, int username, String password) {
+    public hospitalViewEncounterPanel(JPanel lowerPanel, Person person, Admin admin) {
         initComponents();
         this.person = person;
         this.lowerPanel = lowerPanel;
         this.admin = admin;
-        this.userName = username;
-        this.passWord = password;
         loadEncounterTable();
     }
 
@@ -100,47 +96,44 @@ public class viewPatientEncounterPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(33, 33, 33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(51, 51, 51)
-                                .addComponent(jLabel1))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(58, 58, 58))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(createEncounterButton)
-                        .addGap(27, 27, 27)
-                        .addComponent(deleteEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(119, 119, 119))))
+                        .addGap(573, 573, 573))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(144, 144, 144)
+                        .addComponent(jLabel1)
+                        .addGap(520, 520, 520))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(deleteEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(226, 226, 226))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(37, 37, 37)
+                .addGap(40, 40, 40)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(createEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deleteEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,8 +143,8 @@ public class viewPatientEncounterPanel extends javax.swing.JPanel {
 
     private void createEncounterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createEncounterButtonActionPerformed
         // TODO add your handling code here:
-        patientEncounterPanel createEncounter = new patientEncounterPanel(lowerPanel, person, admin, this.userName, this.passWord);
-        lowerPanel.add("CreateEncounterPanel",createEncounter);
+        hospitalCreateEncounterPanel hospitalCreateEncounterPanel = new hospitalCreateEncounterPanel(lowerPanel, person, admin);
+        lowerPanel.add("hospitalCreateEncounterPanel",hospitalCreateEncounterPanel);
         CardLayout layout = (CardLayout)lowerPanel.getLayout();
         layout.next(lowerPanel);
     }//GEN-LAST:event_createEncounterButtonActionPerformed
@@ -167,10 +160,11 @@ public class viewPatientEncounterPanel extends javax.swing.JPanel {
             loadEncounterTable();
     }//GEN-LAST:event_deleteEncounterButtonActionPerformed
     }
+    
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-        patientMainPanel patientPanel = new patientMainPanel(lowerPanel, admin, this.userName, this.passWord);
-        lowerPanel.add("patientMainPanel",patientPanel);
+        hospitalPatientPanel hospitalPatientPanel = new hospitalPatientPanel(lowerPanel, admin);
+        lowerPanel.add("patientMainPanel",hospitalPatientPanel);
         CardLayout layout = (CardLayout)lowerPanel.getLayout();
         layout.next(lowerPanel);
     }//GEN-LAST:event_backButtonActionPerformed

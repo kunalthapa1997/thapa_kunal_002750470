@@ -8,7 +8,6 @@ import Model.Admin;
 import Model.Encounter;
 import Model.Person;
 import java.awt.CardLayout;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -16,23 +15,18 @@ import javax.swing.JPanel;
  *
  * @author kunal
  */
-public class patientEncounterPanel extends javax.swing.JPanel {
+public class hospitalCreateEncounterPanel extends javax.swing.JPanel {
     JPanel lowerPanel;
     Person person;
     Admin admin;
-    int userName;
-    String passWord; 
-    private ArrayList<Person> patientDir;
     /**
-     * Creates new form patientEncounterPanel
+     * Creates new form hospitalCreateEncounterPanel
      */
-    public patientEncounterPanel(JPanel lowerPanel,Person p, Admin admin,int username, String password) {
+    public hospitalCreateEncounterPanel(JPanel lowerPanel,Person p, Admin admin) {
         initComponents();
         this.lowerPanel= lowerPanel;
         this.person = p;
         this.admin = admin;
-        this.userName = username;
-        this.passWord = password;
         symptomsTF.setEnabled(false);
         diagnosisTF.setEnabled(false);
         medicineTF.setEnabled(false);
@@ -169,7 +163,7 @@ public class patientEncounterPanel extends javax.swing.JPanel {
                                     .addComponent(symptomsTF, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(diagnosisTF, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(medicineTF, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,7 +201,7 @@ public class patientEncounterPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(saveEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -248,7 +242,6 @@ public class patientEncounterPanel extends javax.swing.JPanel {
         person.getEncounterHistory().add(new Encounter(name, vitalSign, timeSlot, doctor, symptom, diagnosis, medicine));
 
         JOptionPane.showMessageDialog(this, "New encounter added successfully!", "Info", JOptionPane.INFORMATION_MESSAGE);
-
     }//GEN-LAST:event_saveEncounterActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -264,11 +257,12 @@ public class patientEncounterPanel extends javax.swing.JPanel {
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-        viewPatientEncounterPanel patientPanel = new viewPatientEncounterPanel(lowerPanel, person, admin, this.userName, this.passWord);
-        lowerPanel.add("patientMainPanel",patientPanel);
+        hospitalViewEncounterPanel hospitalViewEncounterPanel = new hospitalViewEncounterPanel(lowerPanel, person, admin);
+        lowerPanel.add("hospitalViewEncounterPanel",hospitalViewEncounterPanel);
         CardLayout layout = (CardLayout)lowerPanel.getLayout();
         layout.next(lowerPanel);
     }//GEN-LAST:event_backButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;

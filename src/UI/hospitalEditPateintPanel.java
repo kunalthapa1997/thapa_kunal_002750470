@@ -16,24 +16,19 @@ import javax.swing.JPanel;
  *
  * @author kunal
  */
-public class patientUpdatePatient extends javax.swing.JPanel {
-
+public class hospitalEditPateintPanel extends javax.swing.JPanel {
     private JPanel lowerPanel;
     Person person;
     Admin admin;
-    int userName;
-    String passWord;
     private ArrayList<Person> patientDir;
     /**
-     * Creates new form patientUpdatePatient
+     * Creates new form hospitalEditPateintPanel
      */
-    public patientUpdatePatient(JPanel lowerPanel, Person person, Admin admin, int username, String password) {
+    public hospitalEditPateintPanel(JPanel lowerPanel, Person person, Admin admin) {
         initComponents();
         this.lowerPanel = lowerPanel;
         this.person = person;
         this.admin = admin;
-        this.userName = username;
-        this.passWord = password;
         getPersonDetails();
     }
 
@@ -89,7 +84,7 @@ public class patientUpdatePatient extends javax.swing.JPanel {
         addPersonPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("UPDATE PERSON");
+        jLabel1.setText("UPDATE PATIENT");
         addPersonPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -207,7 +202,7 @@ public class patientUpdatePatient extends javax.swing.JPanel {
                 editDetailsButtonActionPerformed(evt);
             }
         });
-        addPersonPanel.add(editDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 450, -1, 41));
+        addPersonPanel.add(editDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, -1, 41));
 
         clearButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         clearButton.setText("CLEAR");
@@ -216,7 +211,7 @@ public class patientUpdatePatient extends javax.swing.JPanel {
                 clearButtonActionPerformed(evt);
             }
         });
-        addPersonPanel.add(clearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(619, 450, 114, 41));
+        addPersonPanel.add(clearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 430, 114, 41));
 
         jLabel11.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel11.setText("ILLNESS :");
@@ -252,7 +247,7 @@ public class patientUpdatePatient extends javax.swing.JPanel {
                 saveDetailsButtonActionPerformed(evt);
             }
         });
-        addPersonPanel.add(saveDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(481, 450, -1, 41));
+        addPersonPanel.add(saveDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 430, -1, 41));
         addPersonPanel.add(nameVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 140, 20));
         addPersonPanel.add(ageVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 130, 20));
         addPersonPanel.add(pulseVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 150, 10));
@@ -385,8 +380,8 @@ public class patientUpdatePatient extends javax.swing.JPanel {
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-        patientMainPanel patientMainPanel = new patientMainPanel(lowerPanel, admin, this.userName, this.passWord);
-        lowerPanel.add("patientMainPanel",patientMainPanel);
+        hospitalPatientPanel hospitalPatientPanel = new hospitalPatientPanel(lowerPanel, admin);
+        lowerPanel.add("hospitalPatientPanel",hospitalPatientPanel);
         CardLayout layout = (CardLayout)lowerPanel.getLayout();
         layout.next(lowerPanel);
     }//GEN-LAST:event_backButtonActionPerformed
@@ -400,10 +395,10 @@ public class patientUpdatePatient extends javax.swing.JPanel {
         nameTF.setEnabled(true);
         genderTF.setEnabled(true);
         ageTF.setEnabled(true);
-//        illnessTF.setEnabled(true);
-//        pastIllnessTF.setEnabled(true);
-//        hgTF.setEnabled(true);
-//        bpTF.setEnabled(true);
+        illnessTF.setEnabled(true);
+        pastIllnessTF.setEnabled(true);
+        hgTF.setEnabled(true);
+        bpTF.setEnabled(true);
         houseTF.setEnabled(true);
         cityTF.setEnabled(true);
         communityTF.setEnabled(true);
@@ -523,8 +518,7 @@ public class patientUpdatePatient extends javax.swing.JPanel {
     private javax.swing.JButton saveDetailsButton;
     // End of variables declaration//GEN-END:variables
 
-
-  private void getPersonDetails() {
+private void getPersonDetails() {
         idTF.setText(String.valueOf(person.getId()));
         idTF.setEnabled(false);
         nameTF.setText(person.getName());

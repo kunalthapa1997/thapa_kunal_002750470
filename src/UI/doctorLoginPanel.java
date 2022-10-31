@@ -127,12 +127,6 @@ public class doctorLoginPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addComponent(clearBtn)
-                .addGap(70, 70, 70)
-                .addComponent(loginBtn)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
@@ -147,6 +141,12 @@ public class doctorLoginPanel extends javax.swing.JPanel {
                         .addGap(182, 182, 182)
                         .addComponent(rightPanelLbl)))
                 .addContainerGap(24, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(clearBtn)
+                .addGap(70, 70, 70)
+                .addComponent(loginBtn)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -118,7 +118,7 @@ public class CreateEncounter extends javax.swing.JPanel {
                             .addGap(208, 208, 208)
                             .addComponent(jLabel1))
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(138, 138, 138)
+                            .addGap(172, 172, 172)
                             .addComponent(saveEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(48, 48, 48)
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))

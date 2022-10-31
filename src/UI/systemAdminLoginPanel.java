@@ -5,7 +5,9 @@
 package UI;
 
 import Model.Admin;
+import Model.Person;
 import java.awt.CardLayout;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -16,6 +18,7 @@ import javax.swing.JPanel;
 public class systemAdminLoginPanel extends javax.swing.JPanel {
     JPanel lowerPanel;
     Admin admin;
+    private ArrayList<Person> patientDir;
     /**
      * Creates new form systemAdminLoginPanel
      */

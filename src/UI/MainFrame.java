@@ -74,7 +74,7 @@ public class MainFrame extends javax.swing.JFrame {
         commAdminBtn = new javax.swing.JButton();
         doctorBtn = new javax.swing.JButton();
         patientBtn = new javax.swing.JButton();
-        adminButton4 = new javax.swing.JButton();
+        hospitaLAdminBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -150,11 +150,11 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        adminButton4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        adminButton4.setText("Hospital Admin");
-        adminButton4.addActionListener(new java.awt.event.ActionListener() {
+        hospitaLAdminBtn.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        hospitaLAdminBtn.setText("Hospital Admin");
+        hospitaLAdminBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminButton4ActionPerformed(evt);
+                hospitaLAdminBtnActionPerformed(evt);
             }
         });
 
@@ -170,7 +170,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap(444, Short.MAX_VALUE)
                 .addGroup(homeLowerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(commAdminBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(adminButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(hospitaLAdminBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(adminButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(doctorBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(patientBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -184,7 +184,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(adminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(adminButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(hospitaLAdminBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(commAdminBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -263,9 +263,13 @@ public class MainFrame extends javax.swing.JFrame {
         layout.next(lowerPanel);
     }//GEN-LAST:event_patientBtnActionPerformed
 
-    private void adminButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButton4ActionPerformed
+    private void hospitaLAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitaLAdminBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_adminButton4ActionPerformed
+        hospitalLoginPanel hospitalLoginPanel = new hospitalLoginPanel(lowerPanel, admin);
+        lowerPanel.add("hospitalLoginPanel", hospitalLoginPanel);
+        CardLayout layout = (CardLayout)lowerPanel.getLayout();
+        layout.next(lowerPanel);
+    }//GEN-LAST:event_hospitaLAdminBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -304,11 +308,11 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adminButton;
-    private javax.swing.JButton adminButton4;
     private javax.swing.JButton commAdminBtn;
     private javax.swing.JButton doctorBtn;
     private javax.swing.JButton homeButton;
     private javax.swing.JPanel homeLowerPanel;
+    private javax.swing.JButton hospitaLAdminBtn;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
