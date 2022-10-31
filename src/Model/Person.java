@@ -14,6 +14,7 @@ public class Person {
     private String name;
     private int age;
     private int id;
+    private String password;
     private String gender;
     private String illness;
     private Resident residence;
@@ -38,6 +39,7 @@ public class Person {
     public Person(String name, int age, String gender, String illness, String pastIllness, Resident residence, boolean isPatient, double bloodPressure, double hb) {
         count++;
         this.id = count;
+        this.password = count + '_' + name;
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -53,6 +55,7 @@ public class Person {
     public Person(String name, int age, String gender, String illness, String pastIllness, Resident residence, boolean isPatient, double bloodPressure, double hb, ArrayList<Encounter> encounterHistory) {
         count++;
         this.id = count;
+        this.password = count + '_' + name;
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -67,6 +70,10 @@ public class Person {
 
     public int getId() {
         return id;
+    }
+    
+    public String getPassword() {
+        return password;
     }
     
     public String getName() {

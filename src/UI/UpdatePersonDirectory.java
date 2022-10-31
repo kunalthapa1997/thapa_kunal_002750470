@@ -83,6 +83,8 @@ public class UpdatePersonDirectory extends javax.swing.JPanel {
         illVal = new javax.swing.JLabel();
         genderVal = new javax.swing.JLabel();
         pastIllVal = new javax.swing.JLabel();
+        passwordLbl = new javax.swing.JLabel();
+        passwordTF = new javax.swing.JTextField();
 
         addPersonPanel.setBackground(new java.awt.Color(204, 255, 255));
         addPersonPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -93,7 +95,7 @@ public class UpdatePersonDirectory extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel2.setText("ID :");
-        addPersonPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 113, -1, -1));
+        addPersonPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel3.setText("NAME :");
@@ -132,7 +134,7 @@ public class UpdatePersonDirectory extends javax.swing.JPanel {
                 idTFActionPerformed(evt);
             }
         });
-        addPersonPanel.add(idTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 112, 154, -1));
+        addPersonPanel.add(idTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 154, -1));
 
         nameTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -274,6 +276,17 @@ public class UpdatePersonDirectory extends javax.swing.JPanel {
         addPersonPanel.add(genderVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 130, 20));
         addPersonPanel.add(pastIllVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, 70, 10));
 
+        passwordLbl.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        passwordLbl.setText("PASSWORD :");
+        addPersonPanel.add(passwordLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 90, -1));
+
+        passwordTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordTFActionPerformed(evt);
+            }
+        });
+        addPersonPanel.add(passwordTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 154, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -304,6 +317,7 @@ public class UpdatePersonDirectory extends javax.swing.JPanel {
         editDetailsButton.setEnabled(false);
 
         idTF.setEnabled(false);
+        passwordTF.setEnabled(false);
         nameTF.setEnabled(true);
         genderTF.setEnabled(true);
         ageTF.setEnabled(true);
@@ -519,6 +533,10 @@ public class UpdatePersonDirectory extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_houseTFKeyReleased
 
+    private void passwordTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordTFActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel addPersonPanel;
@@ -556,6 +574,8 @@ public class UpdatePersonDirectory extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField nameTF;
     private javax.swing.JLabel nameVal;
+    private javax.swing.JLabel passwordLbl;
+    private javax.swing.JTextField passwordTF;
     private javax.swing.JLabel pastIllVal;
     private javax.swing.JTextField pastIllnessTF;
     private javax.swing.JTextField patientStatusTF;
@@ -573,6 +593,8 @@ private void getPersonDetails() {
         isPatientCB.setEnabled(false);
         idTF.setText(String.valueOf(person.getId()));
         idTF.setEnabled(false);
+        passwordTF.setText(String.valueOf(person.getPassword()));
+        passwordTF.setEnabled(false);
         nameTF.setText(person.getName());
         nameTF.setEnabled(false);
         genderTF.setText(person.getGender());

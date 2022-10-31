@@ -98,7 +98,7 @@ public class AddPersonData extends javax.swing.JPanel {
 
         jLabel7.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel7.setText("BP. :");
-        addPersonPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 168, -1, -1));
+        addPersonPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel8.setText("PAST ILLNESS :");
@@ -145,7 +145,7 @@ public class AddPersonData extends javax.swing.JPanel {
                 bpTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(bpTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(565, 166, 150, -1));
+        addPersonPanel.add(bpTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 170, 150, -1));
         addPersonPanel.add(pastIllnessTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 332, 118, -1));
         addPersonPanel.add(communityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 275, 140, -1));
         addPersonPanel.add(cityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 332, 140, -1));
@@ -229,7 +229,9 @@ public class AddPersonData extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(addPersonPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(addPersonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 991, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

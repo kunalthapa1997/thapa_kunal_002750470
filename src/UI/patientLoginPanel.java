@@ -7,6 +7,8 @@ package UI;
 import Model.Admin;
 import Model.Person;
 import java.awt.CardLayout;
+import static java.lang.Integer.parseInt;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -17,6 +19,7 @@ import javax.swing.JPanel;
 public class patientLoginPanel extends javax.swing.JPanel {
     JPanel lowerPanel;
     Admin admin;
+//    private ArrayList<Person> patientData;
     
     /**
      * Creates new form patientLoginPanel
@@ -208,15 +211,38 @@ public class patientLoginPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         String userName = usernameTxt.getText();
         String password = passwordTxt.getText();
-        
-        if(userName.equals("patadmin") && password.equals("patpassword")) {
-            patientMainPanel patientMainWindow = new patientMainPanel(lowerPanel, admin);
-            lowerPanel.add("patientMainPanel", patientMainWindow);
-            CardLayout layout = (CardLayout)lowerPanel.getLayout();
-            layout.next(lowerPanel);
-        } else {
-             JOptionPane.showMessageDialog(null, "Please enter correct username/password", "Warning", JOptionPane.WARNING_MESSAGE);
+        int finalUsername = parseInt(userName);
+//        this.patientData = admin.getPatientDirectory();
+        for (Person patient: admin.getPersonDirectory()) {
+            System.out.println(patient.getId());
+            System.out.println(patient.getPassword());
+            if(finalUsername == patient.getId()) {
+                System.out.println("CORRECT USERNAME");
+                 for (Person p: admin.getPersonDirectory()) { 
+                    if(patient.getId() == p.getId()){
+                      if(password.equals(p.getPassword())) {
+                          System.out.println("CORRECT USERNAME AND PASSWORD");
+                            patientMainPanel patientMainWindow = new patientMainPanel(lowerPanel, admin);
+                            lowerPanel.add("patientMainPanel", patientMainWindow);
+                            CardLayout layout = (CardLayout)lowerPanel.getLayout();
+                            layout.next(lowerPanel);
+                            break;
+                      } else {
+                            JOptionPane.showMessageDialog(null, "Please enter correct username/password", "Warning", JOptionPane.WARNING_MESSAGE);
+                            break;
+                      }
+                    }
+                 }
+            }
         }
+//        if(userName.equals("patadmin") && password.equals("patpassword")) {
+//            patientMainPanel patientMainWindow = new patientMainPanel(lowerPanel, admin);
+//            lowerPanel.add("patientMainPanel", patientMainWindow);
+//            CardLayout layout = (CardLayout)lowerPanel.getLayout();
+//            layout.next(lowerPanel);
+//        } else {
+//             JOptionPane.showMessageDialog(null, "Please enter correct username/password", "Warning", JOptionPane.WARNING_MESSAGE);
+//        }
     }//GEN-LAST:event_loginBtnActionPerformed
 
 
