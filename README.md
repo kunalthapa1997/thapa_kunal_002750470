@@ -15,6 +15,7 @@ The hospital management system keeps a collection of directories with different 
 **Unique username is provided to each patient created.**
 
 **MODULE DESCRIPTION:- **
+
 **1. ADMIN MODULE:**
 * Manage operations of hospitals, patients, doctors, community.
 * Watch transaction reports of the patient reports.
