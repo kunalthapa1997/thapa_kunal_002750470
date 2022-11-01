@@ -5,11 +5,12 @@
 **ABSTARCT:-** 
 The hospital management system keeps a collection of directories with different types of information, such as patient histories, information about patients and doctors, information about the availability of doctors, etc for a single hospital. The main goal of the project is to record all information about doctor-patient diagnosis and treatment and store the data. For the purpose of reference, each user is given a special ID, and there is even a provision for room allocation based on the severity of the patient's condition. Additionally, there is a provision for providing information about the specifics of the physician and the associated patient. A distinctive ID and password are offered for this reason. The admin can access the information about the patient and the doctor. The patient's medical history is another thing the doctor has access to. Additionally, patients can get data on the doctors who are on hand. The hospital administration system may be made simple and always accessible with the help of this project. It is user-friendly, gets beyond the complicated problems that manual data storage had to deal with, and offers a clear, easy process that everyone can utilize.
 
-**ROLE	            USERNAME	    PASSWORD**
-System Admin	    sysadmin	    syspassword
-Hospital Admin	  hosadmin	    hospassword
-Community Admin	  comadmin	    compassword
-Doctor	          docadmin	    docpassword
+**The username and password for each role are written against them below:-**
+
+**System Admin**	  (sysadmin, syspassword)
+**Hospital Admin**	  (hosadmin, hospassword)
+**Community Admin**	  (comadmin, compassword)
+**Doctor**	          (docadmin, docpassword)   
 
 **Unique username is provided to each patient created.**
 
