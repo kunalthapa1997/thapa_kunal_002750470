@@ -235,8 +235,8 @@ public final class patientMainPanel extends javax.swing.JPanel {
             Object row[] = new Object[10];
             row[0] = p.getId();
             row[1] = p;
-            row[2]= p.getGender();
-            row[3] = p.getAge();
+            row[2]= p.getAge(); 
+            row[3] = p.getGender();
             row[4]= p.getIllness();
             row[5] = p.getHB();
             row[6]=p.getBloodPressure();

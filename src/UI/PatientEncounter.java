@@ -25,10 +25,11 @@ public class PatientEncounter extends javax.swing.JPanel {
     /**
      * Creates new form Encounter
      */
-    public PatientEncounter(JPanel lowerPanel, Person person) {
+    public PatientEncounter(JPanel lowerPanel, Person person, Admin admin) {
         initComponents();
         this.person = person;
         this.lowerPanel = lowerPanel;
+        this.admin = admin;
         loadEncounterTable();
     }
 
@@ -47,6 +48,7 @@ public class PatientEncounter extends javax.swing.JPanel {
         encounterTable = new javax.swing.JTable();
         createEncounterButton = new javax.swing.JButton();
         deleteEncounterButton = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -86,6 +88,14 @@ public class PatientEncounter extends javax.swing.JPanel {
             }
         });
 
+        backButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        backButton.setText("<< BACK");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -93,7 +103,9 @@ public class PatientEncounter extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
+                        .addGap(27, 27, 27)
+                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(87, 87, 87)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(99, 99, 99)
@@ -109,15 +121,20 @@ public class PatientEncounter extends javax.swing.JPanel {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deleteEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(createEncounterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -134,7 +151,7 @@ public class PatientEncounter extends javax.swing.JPanel {
 
     private void createEncounterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createEncounterButtonActionPerformed
         // TODO add your handling code here:
-        CreateEncounter createEncounter = new CreateEncounter(lowerPanel, person);
+        CreateEncounter createEncounter = new CreateEncounter(lowerPanel, person, admin);
         lowerPanel.add("CreateEncounterPanel",createEncounter);
         CardLayout layout = (CardLayout)lowerPanel.getLayout();
         layout.next(lowerPanel);
@@ -154,8 +171,17 @@ public class PatientEncounter extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Select a record to Delete");
         }
 }
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        PersonDirectory PersonDirectory = new PersonDirectory(lowerPanel, admin);
+        lowerPanel.add("PersonDirectory",PersonDirectory);
+        CardLayout layout = (CardLayout)lowerPanel.getLayout();
+        layout.next(lowerPanel);
+    }//GEN-LAST:event_backButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
     private javax.swing.JButton createEncounterButton;
     private javax.swing.JButton deleteEncounterButton;
     private javax.swing.JTable encounterTable;
@@ -173,8 +199,8 @@ private void loadEncounterTable() {
         for (Model.Encounter e : person.getEncounterHistory()) {
             Object row[] = new Object[7];
             row[0] = e;
-            row[1] = e.getTimeSlot();
-            row[2] = e.getVitalsign();
+            row[1] = e.getVitalsign();
+            row[2] = e.getTimeSlot();
             row[3] = e.getDoctor();
             row[4] = e.getSymptoms();
             row[5] = e.getDiagnosis();

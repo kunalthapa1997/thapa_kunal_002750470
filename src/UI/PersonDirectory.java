@@ -371,7 +371,7 @@ public class PersonDirectory extends javax.swing.JPanel {
             return;
         }
         Person person = (Person)patientTable.getValueAt(row, 1);
-        PatientEncounter viewEncounterJPanel = new PatientEncounter(lowerPanel, person);
+        PatientEncounter viewEncounterJPanel = new PatientEncounter(lowerPanel, person, admin);
         lowerPanel.add("EncounterPanel",viewEncounterJPanel);
         CardLayout layout = (CardLayout)lowerPanel.getLayout();
         layout.next(lowerPanel);
@@ -477,8 +477,8 @@ public void loadPatientTable() {
             Object row[] = new Object[10];
             row[0] = p.getId();
             row[1] = p;
-            row[2]= p.getGender();
-            row[3] = p.getAge();
+            row[2]= p.getAge();
+            row[3] = p.getGender();
             row[4]= p.getIllness();
             row[5] = p.getHB();
             row[6]=p.getBloodPressure();

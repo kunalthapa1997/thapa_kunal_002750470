@@ -4,6 +4,7 @@
  */
 package UI;
 
+import Model.Admin;
 import Model.Encounter;
 import Model.Person;
 import java.awt.CardLayout;
@@ -17,13 +18,15 @@ import javax.swing.JPanel;
 public class CreateEncounter extends javax.swing.JPanel {
     JPanel lowerPanel;
     Person person;
+    Admin admin;
     /**
      * Creates new form CreateEncounter
      */
-    public CreateEncounter(JPanel userJP,Person p) {
+    public CreateEncounter(JPanel userJP,Person p, Admin admin) {
         initComponents();
         this.lowerPanel= userJP;
         this.person = p;
+        this.admin = admin;
     }
 
     @SuppressWarnings("unchecked")
@@ -237,7 +240,7 @@ public class CreateEncounter extends javax.swing.JPanel {
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-        PatientEncounter EncounterPanel = new PatientEncounter(lowerPanel, person);
+        PatientEncounter EncounterPanel = new PatientEncounter(lowerPanel, person, admin);
         lowerPanel.add("EncounterPanel",EncounterPanel);
         CardLayout layout = (CardLayout)lowerPanel.getLayout();
         layout.next(lowerPanel);

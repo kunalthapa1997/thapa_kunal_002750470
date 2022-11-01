@@ -142,8 +142,8 @@ public class commonHomeScreenPanel extends javax.swing.JPanel {
 
     private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed
         // TODO add your handling code here:
-        AdminWindow adminWindow = new AdminWindow(lowerPanel, admin);
-        lowerPanel.add("AdminWindow", adminWindow);
+       systemAdminLoginPanel systemAdminLoginPanel = new systemAdminLoginPanel(lowerPanel, admin);
+        lowerPanel.add("systemAdminLoginPanel", systemAdminLoginPanel);
         CardLayout layout = (CardLayout)lowerPanel.getLayout();
         layout.next(lowerPanel);
     }//GEN-LAST:event_adminButtonActionPerformed
@@ -174,6 +174,10 @@ public class commonHomeScreenPanel extends javax.swing.JPanel {
 
     private void adminButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButton4ActionPerformed
         // TODO add your handling code here:
+        hospitalLoginPanel hospitalLoginPanel = new hospitalLoginPanel(lowerPanel, admin);
+        lowerPanel.add("hospitalLoginPanel", hospitalLoginPanel);
+        CardLayout layout = (CardLayout)lowerPanel.getLayout();
+        layout.next(lowerPanel);
     }//GEN-LAST:event_adminButton4ActionPerformed
 
 

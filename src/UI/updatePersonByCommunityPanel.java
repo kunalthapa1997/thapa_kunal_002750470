@@ -48,29 +48,19 @@ public class updatePersonByCommunityPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         idTF = new javax.swing.JTextField();
         nameTF = new javax.swing.JTextField();
         genderTF = new javax.swing.JTextField();
         ageTF = new javax.swing.JTextField();
-        hgTF = new javax.swing.JTextField();
-        bpTF = new javax.swing.JTextField();
-        pastIllnessTF = new javax.swing.JTextField();
         communityTF = new javax.swing.JTextField();
         cityTF = new javax.swing.JTextField();
         backButton = new javax.swing.JButton();
         editDetailsButton = new javax.swing.JButton();
         clearButton = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
-        illnessTF = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         houseTF = new javax.swing.JTextField();
-        isPatientCB = new javax.swing.JCheckBox();
-        patientStatusTF = new javax.swing.JTextField();
         saveDetailsButton = new javax.swing.JButton();
         nameVal = new javax.swing.JLabel();
         ageVal = new javax.swing.JLabel();
@@ -106,25 +96,13 @@ public class updatePersonByCommunityPanel extends javax.swing.JPanel {
         jLabel5.setText("AGE :");
         addPersonPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 272, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel6.setText("PULSE :");
-        addPersonPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 114, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel7.setText("BP. :");
-        addPersonPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 163, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel8.setText("PAST ILLNESS :");
-        addPersonPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 379, -1, -1));
-
         jLabel9.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel9.setText("COMMUNITY :");
-        addPersonPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 272, -1, -1));
+        addPersonPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel10.setText("CITY :");
-        addPersonPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 321, -1, -1));
+        addPersonPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, -1, -1));
 
         idTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,40 +137,19 @@ public class updatePersonByCommunityPanel extends javax.swing.JPanel {
         });
         addPersonPanel.add(ageTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 271, 154, -1));
 
-        hgTF.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                hgTFKeyReleased(evt);
-            }
-        });
-        addPersonPanel.add(hgTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(573, 113, 150, -1));
-
-        bpTF.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                bpTFKeyReleased(evt);
-            }
-        });
-        addPersonPanel.add(bpTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(573, 162, 150, -1));
-
-        pastIllnessTF.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                pastIllnessTFKeyReleased(evt);
-            }
-        });
-        addPersonPanel.add(pastIllnessTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 378, 118, -1));
-
         communityTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 communityTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(communityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(573, 271, 150, -1));
+        addPersonPanel.add(communityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, 150, -1));
 
         cityTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 cityTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(cityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(573, 320, 150, -1));
+        addPersonPanel.add(cityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, 150, -1));
 
         backButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         backButton.setText("<< BACK");
@@ -221,20 +178,9 @@ public class updatePersonByCommunityPanel extends javax.swing.JPanel {
         });
         addPersonPanel.add(clearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(619, 450, 114, 41));
 
-        jLabel11.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel11.setText("ILLNESS :");
-        addPersonPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 321, -1, -1));
-
-        illnessTF.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                illnessTFKeyReleased(evt);
-            }
-        });
-        addPersonPanel.add(illnessTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 320, 151, -1));
-
         jLabel13.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel13.setText("HOUSE :");
-        addPersonPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 217, -1, -1));
+        addPersonPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, -1, -1));
 
         houseTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,18 +192,7 @@ public class updatePersonByCommunityPanel extends javax.swing.JPanel {
                 houseTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(houseTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(573, 216, 150, -1));
-
-        isPatientCB.setBackground(new java.awt.Color(204, 255, 255));
-        isPatientCB.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        isPatientCB.setText("IS PATIENT ?");
-        isPatientCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                isPatientCBActionPerformed(evt);
-            }
-        });
-        addPersonPanel.add(isPatientCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 375, -1, -1));
-        addPersonPanel.add(patientStatusTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(583, 378, 140, -1));
+        addPersonPanel.add(houseTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, 150, -1));
 
         saveDetailsButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         saveDetailsButton.setText("SAVE DETAILS");
@@ -287,8 +222,9 @@ public class updatePersonByCommunityPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(addPersonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -322,58 +258,7 @@ public class updatePersonByCommunityPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_genderTFKeyReleased
 
-    private void ageTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ageTFKeyReleased
-        // TODO add your handling code here:
-        String age ="^[0-9]{0,10}$";
-        Pattern p = Pattern.compile(age);
-        Matcher match= p.matcher(ageTF.getText());
-        if(!match.matches()){
-            ageVal.setText("Invalid! Only numeric input");
-        }
-        else {
-            ageVal.setText("");
-    }//GEN-LAST:event_ageTFKeyReleased
-    }
     
-    private void hgTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_hgTFKeyReleased
-        // TODO add your handling code here:
-        String str ="^[0-9]{0,10}$";
-        Pattern p = Pattern.compile(str);
-        Matcher match= p.matcher(hgTF.getText());
-        if(!match.matches()){
-            pulseVal.setText("Invalid! Only numeric input");
-        }
-        else {
-            pulseVal.setText("");
-        }
-    }//GEN-LAST:event_hgTFKeyReleased
-
-    private void bpTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bpTFKeyReleased
-        // TODO add your handling code here:
-        String str ="^[0-9]{0,10}$";
-        Pattern p = Pattern.compile(str);
-        Matcher match= p.matcher(bpTF.getText());
-        if(!match.matches()){
-            bpVal.setText("Invalid! Only numeric input");
-        }
-        else {
-            bpVal.setText("");
-        }
-    }//GEN-LAST:event_bpTFKeyReleased
-
-    private void pastIllnessTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pastIllnessTFKeyReleased
-        // TODO add your handling code here:
-        String str ="^[a-zA-Z\\s]{0,30}$";
-        Pattern p = Pattern.compile(str);
-        Matcher match= p.matcher(pastIllnessTF.getText());
-        if(!match.matches()){
-            pastIllVal.setText("Invalid input!");
-        }
-        else {
-            pastIllVal.setText("");
-        }
-    }//GEN-LAST:event_pastIllnessTFKeyReleased
-
     private void communityTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_communityTFKeyReleased
         // TODO add your handling code here:
         String str ="^[a-zA-Z\\s]{0,30}$";
@@ -417,22 +302,22 @@ public class updatePersonByCommunityPanel extends javax.swing.JPanel {
         nameTF.setEnabled(true);
         genderTF.setEnabled(true);
         ageTF.setEnabled(true);
-        illnessTF.setEnabled(true);
-        pastIllnessTF.setEnabled(true);
-        hgTF.setEnabled(true);
-        bpTF.setEnabled(true);
+//        illnessTF.setEnabled(true);
+//        pastIllnessTF.setEnabled(true);
+//        hgTF.setEnabled(true);
+//        bpTF.setEnabled(true);
         houseTF.setEnabled(true);
         cityTF.setEnabled(true);
         communityTF.setEnabled(true);
 
-        if (patientStatusTF.getText().equals("YES")) {
-            isPatientCB.setSelected(true);
-        } else {
-            isPatientCB.setSelected(false);
-        }
-
-        patientStatusTF.setVisible(false);
-        isPatientCB.setEnabled(true);
+//        if (patientStatusTF.getText().equals("YES")) {
+//            isPatientCB.setSelected(true);
+//        } else {
+//            isPatientCB.setSelected(false);
+//        }
+//
+//        patientStatusTF.setVisible(false);
+//        isPatientCB.setEnabled(true);
     }//GEN-LAST:event_editDetailsButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
@@ -440,27 +325,14 @@ public class updatePersonByCommunityPanel extends javax.swing.JPanel {
         nameTF.setText("");
         genderTF.setText("");
         ageTF.setText("");
-        illnessTF.setText("");
-        pastIllnessTF.setText("");
-        hgTF.setText("");
-        bpTF.setText("");
+//        illnessTF.setText("");
+//        pastIllnessTF.setText("");
+//        hgTF.setText("");
+//        bpTF.setText("");
         houseTF.setText("");
         communityTF.setText("");
         cityTF.setText("");
     }//GEN-LAST:event_clearButtonActionPerformed
-
-    private void illnessTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_illnessTFKeyReleased
-        // TODO add your handling code here:
-        String Name ="^[a-zA-Z\\s]{0,30}$";
-        Pattern p = Pattern.compile(Name);
-        Matcher match= p.matcher(illnessTF.getText());
-        if(!match.matches()){
-            illVal.setText("Invalid input!");
-        }
-        else {
-            illVal.setText("");
-        }
-    }//GEN-LAST:event_illnessTFKeyReleased
 
     private void houseTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_houseTFActionPerformed
         // TODO add your handling code here:
@@ -479,44 +351,40 @@ public class updatePersonByCommunityPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_houseTFKeyReleased
 
-    private void isPatientCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isPatientCBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_isPatientCBActionPerformed
-
     private void saveDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveDetailsButtonActionPerformed
         // TODO add your handling code here:
         saveDetailsButton.setEnabled(false);
         editDetailsButton.setEnabled(true);
 
-        isPatientCB.setEnabled(false);
+//        isPatientCB.setEnabled(false);
 
         nameTF.setEnabled(false);
         genderTF.setEnabled(false);
         ageTF.setEnabled(false);
-        illnessTF.setEnabled(false);
-        pastIllnessTF.setEnabled(false);
-        hgTF.setEnabled(false);
-        bpTF.setEnabled(false);
+//        illnessTF.setEnabled(false);
+//        pastIllnessTF.setEnabled(false);
+//        hgTF.setEnabled(false);
+//        bpTF.setEnabled(false);
         houseTF.setEnabled(false);
         communityTF.setEnabled(false);
         cityTF.setEnabled(false);
 
-        if (isPatientCB.isSelected()) {
-            patientStatusTF.setText("YES");
-        } else {
-            patientStatusTF.setText("NO");
-        }
+//        if (isPatientCB.isSelected()) {
+//            patientStatusTF.setText("YES");
+//        } else {
+//            patientStatusTF.setText("NO");
+//        }
+//
+//        patientStatusTF.setVisible(true);
 
-        patientStatusTF.setVisible(true);
-
-        person.setIsPatient(isPatientCB.isSelected());
+//        person.setIsPatient(isPatientCB.isSelected());
         person.setName(nameTF.getText());
         person.setGender(genderTF.getText());
         person.setAge(Integer.parseInt(ageTF.getText()));
-        person.setIllness(illnessTF.getText());
-        person.setPastIllness(pastIllnessTF.getText());
-        person.setHB(Double.parseDouble(hgTF.getText()));
-        person.setBloodPressure(Double.parseDouble(bpTF.getText()));
+//        person.setIllness(illnessTF.getText());
+//        person.setPastIllness(pastIllnessTF.getText());
+//        person.setHB(Double.parseDouble(hgTF.getText()));
+//        person.setBloodPressure(Double.parseDouble(bpTF.getText()));
         person.getResidence().setCity(cityTF.getText());
         person.getResidence().setCommunity(communityTF.getText());
         person.getResidence().setHouse(houseTF.getText());
@@ -527,13 +395,24 @@ public class updatePersonByCommunityPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameTFActionPerformed
 
+    private void ageTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ageTFKeyReleased
+        // TODO add your handling code here:
+        String age ="^[0-9]{0,10}$";
+        Pattern p = Pattern.compile(age);
+        Matcher match= p.matcher(ageTF.getText());
+        if(!match.matches()){
+            ageVal.setText("Invalid! Only numeric input");
+        }
+        else {
+            ageVal.setText("");
+    }//GEN-LAST:event_ageTFKeyReleased
 
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel addPersonPanel;
     private javax.swing.JTextField ageTF;
     private javax.swing.JLabel ageVal;
     private javax.swing.JButton backButton;
-    private javax.swing.JTextField bpTF;
     private javax.swing.JLabel bpVal;
     private javax.swing.JTextField cityTF;
     private javax.swing.JLabel cityVal;
@@ -543,42 +422,33 @@ public class updatePersonByCommunityPanel extends javax.swing.JPanel {
     private javax.swing.JButton editDetailsButton;
     private javax.swing.JTextField genderTF;
     private javax.swing.JLabel genderVal;
-    private javax.swing.JTextField hgTF;
     private javax.swing.JTextField houseTF;
     private javax.swing.JLabel houseVal;
     private javax.swing.JTextField idTF;
     private javax.swing.JLabel illVal;
-    private javax.swing.JTextField illnessTF;
-    private javax.swing.JCheckBox isPatientCB;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField nameTF;
     private javax.swing.JLabel nameVal;
     private javax.swing.JLabel pastIllVal;
-    private javax.swing.JTextField pastIllnessTF;
-    private javax.swing.JTextField patientStatusTF;
     private javax.swing.JLabel pulseVal;
     private javax.swing.JButton saveDetailsButton;
     // End of variables declaration//GEN-END:variables
 
 private void getPersonDetails() {
-        if(person.isIsPatient() == true){
-            patientStatusTF.setText("YES");
-        }
-        else{
-            patientStatusTF.setText("NO");
-        }
-        isPatientCB.setEnabled(false);
+//        if(person.isIsPatient() == true){
+//            patientStatusTF.setText("YES");
+//        }
+//        else{
+//            patientStatusTF.setText("NO");
+//        }
+//        isPatientCB.setEnabled(false);
         idTF.setText(String.valueOf(person.getId()));
         idTF.setEnabled(false);
         nameTF.setText(person.getName());
@@ -587,14 +457,14 @@ private void getPersonDetails() {
         genderTF.setEnabled(false);
         ageTF.setText(String.valueOf(person.getAge()));
         ageTF.setEnabled(false);
-        illnessTF.setText(person.getIllness());
-        illnessTF.setEnabled(false);
-        pastIllnessTF.setText(person.getPastIllness());
-        pastIllnessTF.setEnabled(false);
-        hgTF.setText(String.valueOf(person.getHB()));
-        hgTF.setEnabled(false);
-        bpTF.setText(String.valueOf(person.getBloodPressure()));
-        bpTF.setEnabled(false);
+//        illnessTF.setText(person.getIllness());
+//        illnessTF.setEnabled(false);
+//        pastIllnessTF.setText(person.getPastIllness());
+//        pastIllnessTF.setEnabled(false);
+//        hgTF.setText(String.valueOf(person.getHB()));
+//        hgTF.setEnabled(false);
+//        bpTF.setText(String.valueOf(person.getBloodPressure()));
+//        bpTF.setEnabled(false);
         cityTF.setText(person.getResidence().getCity());
         cityTF.setEnabled(false);
         communityTF.setText(person.getResidence().getCommunity());

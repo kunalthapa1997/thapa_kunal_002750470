@@ -43,28 +43,18 @@ public class addPersonByCommunityPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         nameTF = new javax.swing.JTextField();
         genderTF = new javax.swing.JTextField();
         ageTF = new javax.swing.JTextField();
-        hgTF = new javax.swing.JTextField();
-        bpTF = new javax.swing.JTextField();
-        pastIllnessTF = new javax.swing.JTextField();
         communityTF = new javax.swing.JTextField();
         cityTF = new javax.swing.JTextField();
         backButton = new javax.swing.JButton();
         saveDetailsButton = new javax.swing.JButton();
         clearButton = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
-        illnessTF = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         houseTF = new javax.swing.JTextField();
-        isPatientCB = new javax.swing.JCheckBox();
-        patientStatusTF = new javax.swing.JTextField();
         nameVal = new javax.swing.JLabel();
         genderVal = new javax.swing.JLabel();
         ageVal = new javax.swing.JLabel();
@@ -90,25 +80,13 @@ public class addPersonByCommunityPanel extends javax.swing.JPanel {
         jLabel5.setText("AGE :");
         addPersonPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 221, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel6.setText("PULSE :");
-        addPersonPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 114, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel7.setText("BP. :");
-        addPersonPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 168, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel8.setText("PAST ILLNESS :");
-        addPersonPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 333, -1, -1));
-
         jLabel9.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel9.setText("COMMUNITY :");
-        addPersonPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 277, -1, -1));
+        addPersonPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel10.setText("CITY :");
-        addPersonPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 333, -1, -1));
+        addPersonPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, -1, -1));
 
         nameTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -130,23 +108,8 @@ public class addPersonByCommunityPanel extends javax.swing.JPanel {
             }
         });
         addPersonPanel.add(ageTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 220, 154, -1));
-
-        hgTF.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                hgTFKeyReleased(evt);
-            }
-        });
-        addPersonPanel.add(hgTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(565, 112, 150, -1));
-
-        bpTF.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                bpTFKeyReleased(evt);
-            }
-        });
-        addPersonPanel.add(bpTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(565, 166, 150, -1));
-        addPersonPanel.add(pastIllnessTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 332, 118, -1));
-        addPersonPanel.add(communityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 275, 140, -1));
-        addPersonPanel.add(cityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 332, 140, -1));
+        addPersonPanel.add(communityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 140, -1));
+        addPersonPanel.add(cityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 140, -1));
 
         backButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         backButton.setText("<< BACK");
@@ -175,38 +138,16 @@ public class addPersonByCommunityPanel extends javax.swing.JPanel {
         });
         addPersonPanel.add(clearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(601, 462, 114, 41));
 
-        jLabel11.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel11.setText("ILLNESS :");
-        addPersonPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 277, -1, -1));
-        addPersonPanel.add(illnessTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 276, 150, -1));
-
         jLabel13.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel13.setText("HOUSE :");
-        addPersonPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 221, -1, -1));
+        addPersonPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, -1, -1));
 
         houseTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 houseTFActionPerformed(evt);
             }
         });
-        addPersonPanel.add(houseTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(565, 220, 150, -1));
-
-        isPatientCB.setBackground(new java.awt.Color(204, 255, 255));
-        isPatientCB.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        isPatientCB.setText("IS PATIENT ?");
-        isPatientCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                isPatientCBActionPerformed(evt);
-            }
-        });
-        addPersonPanel.add(isPatientCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, -1, -1));
-
-        patientStatusTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                patientStatusTFActionPerformed(evt);
-            }
-        });
-        addPersonPanel.add(patientStatusTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 390, 130, -1));
+        addPersonPanel.add(houseTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 150, -1));
         addPersonPanel.add(nameVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 140, 20));
         addPersonPanel.add(genderVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 150, 20));
         addPersonPanel.add(ageVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 160, 20));
@@ -266,32 +207,6 @@ public class addPersonByCommunityPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_ageTFKeyReleased
 
-    private void hgTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_hgTFKeyReleased
-        // TODO add your handling code here:
-        String str ="^[0-9]{0,10}$";
-        Pattern p = Pattern.compile(str);
-        Matcher match= p.matcher(hgTF.getText());
-        if(!match.matches()){
-            pulseVal.setText("Invalid! Only numeric input");
-        }
-        else {
-            pulseVal.setText("");
-        }
-    }//GEN-LAST:event_hgTFKeyReleased
-
-    private void bpTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bpTFKeyReleased
-        // TODO add your handling code here:
-        String str ="^[0-9]{0,10}$";
-        Pattern p = Pattern.compile(str);
-        Matcher match= p.matcher(bpTF.getText());
-        if(!match.matches()){
-            bpVal.setText("Invalid! Only numeric input");
-        }
-        else {
-            bpVal.setText("");
-        }
-    }//GEN-LAST:event_bpTFKeyReleased
-
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
         communityMainPanel communityMainPanel = new communityMainPanel(lowerPanel, admin);
@@ -321,18 +236,18 @@ public class addPersonByCommunityPanel extends javax.swing.JPanel {
             city = cityTF.getText();
             community = communityTF.getText();
             house = houseTF.getText();
-            illness = illnessTF.getText();
-            pastIllness = pastIllnessTF.getText();
+            illness = "Null";
+            pastIllness = "Null";
 
-            if (isPatientCB.isSelected()) {
-                patientStatusTF.setText("YES");
-                isPatient = true;
-            } else {
-                patientStatusTF.setText("NO");
+//            if (isPatientCB.isSelected()) {
+//                patientStatusTF.setText("YES");
+//                isPatient = true;
+//            } else {
+//                patientStatusTF.setText("NO");
                 isPatient = false;
-            }
-            BP = Double.parseDouble(bpTF.getText());
-            HB = Double.parseDouble(hgTF.getText());
+//            }
+            BP = 0;
+            HB = 0;
 
         }catch(Exception e){
             JOptionPane.showMessageDialog(this, "Please recheck info entered!", "Info", JOptionPane.INFORMATION_MESSAGE);
@@ -351,10 +266,10 @@ public class addPersonByCommunityPanel extends javax.swing.JPanel {
         nameTF.setText("");
         genderTF.setText("");
         ageTF.setText("");
-        illnessTF.setText("");
-        pastIllnessTF.setText("");
-        hgTF.setText("");
-        bpTF.setText("");
+//        illnessTF.setText("");
+//        pastIllnessTF.setText("");
+//        hgTF.setText("");
+//        bpTF.setText("");
         houseTF.setText("");
         communityTF.setText("");
         cityTF.setText("");
@@ -365,46 +280,28 @@ public class addPersonByCommunityPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_houseTFActionPerformed
 
-    private void isPatientCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isPatientCBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_isPatientCBActionPerformed
-
-    private void patientStatusTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientStatusTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_patientStatusTFActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel addPersonPanel;
     private javax.swing.JTextField ageTF;
     private javax.swing.JLabel ageVal;
     private javax.swing.JButton backButton;
-    private javax.swing.JTextField bpTF;
     private javax.swing.JLabel bpVal;
     private javax.swing.JTextField cityTF;
     private javax.swing.JButton clearButton;
     private javax.swing.JTextField communityTF;
     private javax.swing.JTextField genderTF;
     private javax.swing.JLabel genderVal;
-    private javax.swing.JTextField hgTF;
     private javax.swing.JTextField houseTF;
-    private javax.swing.JTextField illnessTF;
-    private javax.swing.JCheckBox isPatientCB;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField nameTF;
     private javax.swing.JLabel nameVal;
-    private javax.swing.JTextField pastIllnessTF;
-    private javax.swing.JTextField patientStatusTF;
     private javax.swing.JLabel pulseVal;
     private javax.swing.JButton saveDetailsButton;
     // End of variables declaration//GEN-END:variables

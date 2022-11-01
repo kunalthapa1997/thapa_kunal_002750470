@@ -195,8 +195,8 @@ private void loadEncounterTable() {
         for (Model.Encounter e : person.getEncounterHistory()) {
             Object row[] = new Object[7];
             row[0] = e;
-            row[1] = e.getTimeSlot();
-            row[2] = e.getVitalsign();
+            row[1] = e.getVitalsign();
+            row[2] =  e.getTimeSlot();
             row[3] = e.getDoctor();
             row[4] = e.getSymptoms();
             row[5] = e.getDiagnosis();

@@ -191,7 +191,7 @@ public class communityMainPanel extends javax.swing.JPanel {
             row[0] = p.getId();
             row[1] = p;
             row[2]= p.getGender();
-            row[3] = p.getAge();
+            row[3] = p.getAge(); 
             row[4]= p.getIllness();
             row[5] = p.getHB();
             row[6]= p.getBloodPressure();
