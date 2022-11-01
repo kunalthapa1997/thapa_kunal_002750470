@@ -85,7 +85,7 @@ public class patientUpdatePatient extends javax.swing.JPanel {
         genderVal = new javax.swing.JLabel();
         pastIllVal = new javax.swing.JLabel();
 
-        addPersonPanel.setBackground(new java.awt.Color(204, 255, 255));
+        addPersonPanel.setBackground(new java.awt.Color(0, 102, 102));
         addPersonPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N

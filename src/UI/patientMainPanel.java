@@ -53,7 +53,7 @@ public final class patientMainPanel extends javax.swing.JPanel {
         viewEncounterButton = new javax.swing.JButton();
         updatePatientButton = new javax.swing.JButton();
 
-        personPanel.setBackground(new java.awt.Color(204, 255, 255));
+        personPanel.setBackground(new java.awt.Color(0, 102, 102));
 
         backButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         backButton.setText("<< BACK");

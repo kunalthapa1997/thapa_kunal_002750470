@@ -78,111 +78,112 @@ public class doctorUpdatePatient extends javax.swing.JPanel {
         genderVal = new javax.swing.JLabel();
         pastIllVal = new javax.swing.JLabel();
 
-        addPersonPanel.setBackground(new java.awt.Color(204, 255, 255));
+        addPersonPanel.setBackground(new java.awt.Color(0, 102, 102));
         addPersonPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("UPDATE PERSON");
-        addPersonPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, -1, -1));
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        addPersonPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel2.setText("ID :");
-        addPersonPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 113, -1, -1));
+        addPersonPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel3.setText("NAME :");
-        addPersonPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 163, -1, -1));
+        addPersonPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel4.setText("GENDER :");
-        addPersonPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 217, -1, -1));
+        addPersonPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel5.setText("AGE :");
-        addPersonPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 272, -1, -1));
+        addPersonPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel6.setText("PULSE :");
-        addPersonPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 114, -1, -1));
+        addPersonPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 110, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel7.setText("BP. :");
-        addPersonPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 163, -1, -1));
+        addPersonPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 160, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel8.setText("PAST ILLNESS :");
-        addPersonPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 379, -1, -1));
+        addPersonPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel9.setText("COMMUNITY :");
-        addPersonPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 272, -1, -1));
+        addPersonPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel10.setText("CITY :");
-        addPersonPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 321, -1, -1));
+        addPersonPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, -1, -1));
 
         idTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idTFActionPerformed(evt);
             }
         });
-        addPersonPanel.add(idTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 112, 154, -1));
+        addPersonPanel.add(idTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 154, -1));
 
         nameTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 nameTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(nameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 162, 154, -1));
+        addPersonPanel.add(nameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 154, -1));
 
         genderTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 genderTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(genderTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 216, 154, -1));
+        addPersonPanel.add(genderTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 154, -1));
 
         ageTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 ageTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(ageTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 271, 154, -1));
+        addPersonPanel.add(ageTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 154, -1));
 
         hgTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 hgTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(hgTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(573, 113, 150, -1));
+        addPersonPanel.add(hgTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 110, 150, -1));
 
         bpTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 bpTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(bpTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(573, 162, 150, -1));
+        addPersonPanel.add(bpTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 160, 150, -1));
 
         pastIllnessTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 pastIllnessTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(pastIllnessTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 378, 118, -1));
+        addPersonPanel.add(pastIllnessTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, 118, -1));
 
         communityTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 communityTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(communityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(573, 271, 150, -1));
+        addPersonPanel.add(communityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, 150, -1));
 
         cityTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 cityTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(cityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(573, 320, 150, -1));
+        addPersonPanel.add(cityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 310, 150, -1));
 
         backButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         backButton.setText("<< BACK");
@@ -191,7 +192,7 @@ public class doctorUpdatePatient extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
-        addPersonPanel.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 28, 107, 41));
+        addPersonPanel.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 107, 41));
 
         editDetailsButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         editDetailsButton.setText("EDIT DETAILS");
@@ -200,7 +201,7 @@ public class doctorUpdatePatient extends javax.swing.JPanel {
                 editDetailsButtonActionPerformed(evt);
             }
         });
-        addPersonPanel.add(editDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 450, -1, 41));
+        addPersonPanel.add(editDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 410, -1, 41));
 
         clearButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         clearButton.setText("CLEAR");
@@ -209,22 +210,22 @@ public class doctorUpdatePatient extends javax.swing.JPanel {
                 clearButtonActionPerformed(evt);
             }
         });
-        addPersonPanel.add(clearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(619, 450, 114, 41));
+        addPersonPanel.add(clearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 114, 41));
 
         jLabel11.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel11.setText("ILLNESS :");
-        addPersonPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 321, -1, -1));
+        addPersonPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, -1, -1));
 
         illnessTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 illnessTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(illnessTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 320, 151, -1));
+        addPersonPanel.add(illnessTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 151, -1));
 
         jLabel13.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel13.setText("HOUSE :");
-        addPersonPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 217, -1, -1));
+        addPersonPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, -1, -1));
 
         houseTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,7 +237,7 @@ public class doctorUpdatePatient extends javax.swing.JPanel {
                 houseTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(houseTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(573, 216, 150, -1));
+        addPersonPanel.add(houseTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, 150, -1));
 
         saveDetailsButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         saveDetailsButton.setText("SAVE DETAILS");
@@ -245,7 +246,7 @@ public class doctorUpdatePatient extends javax.swing.JPanel {
                 saveDetailsButtonActionPerformed(evt);
             }
         });
-        addPersonPanel.add(saveDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(481, 450, -1, 41));
+        addPersonPanel.add(saveDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 410, -1, 41));
         addPersonPanel.add(nameVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 140, 20));
         addPersonPanel.add(ageVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 130, 20));
         addPersonPanel.add(pulseVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 150, 10));
@@ -261,7 +262,10 @@ public class doctorUpdatePatient extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(addPersonPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(addPersonPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1063, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

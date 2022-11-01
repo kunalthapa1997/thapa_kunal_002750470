@@ -71,82 +71,83 @@ public class hospitalCreatePateintPanel extends javax.swing.JPanel {
         pulseVal = new javax.swing.JLabel();
         bpVal = new javax.swing.JLabel();
 
-        addPersonPanel.setBackground(new java.awt.Color(204, 255, 255));
+        addPersonPanel.setBackground(new java.awt.Color(0, 102, 102));
         addPersonPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("ADD NEW PATIENT");
-        addPersonPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        addPersonPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel3.setText("NAME :");
-        addPersonPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 114, -1, -1));
+        addPersonPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel4.setText("GENDER :");
-        addPersonPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 168, -1, -1));
+        addPersonPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel5.setText("AGE :");
-        addPersonPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 221, -1, -1));
+        addPersonPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel6.setText("PULSE :");
-        addPersonPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 114, -1, -1));
+        addPersonPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel7.setText("BP. :");
-        addPersonPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 168, -1, -1));
+        addPersonPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel8.setText("PAST ILLNESS :");
-        addPersonPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 333, -1, -1));
+        addPersonPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel9.setText("COMMUNITY :");
-        addPersonPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 277, -1, -1));
+        addPersonPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel10.setText("CITY :");
-        addPersonPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 333, -1, -1));
+        addPersonPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, -1, -1));
 
         nameTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 nameTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(nameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 113, 154, -1));
+        addPersonPanel.add(nameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 154, -1));
 
         genderTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 genderTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(genderTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 167, 154, -1));
+        addPersonPanel.add(genderTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 154, -1));
 
         ageTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 ageTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(ageTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 220, 154, -1));
+        addPersonPanel.add(ageTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 154, -1));
 
         hgTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 hgTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(hgTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(565, 112, 150, -1));
+        addPersonPanel.add(hgTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, 150, -1));
 
         bpTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 bpTFKeyReleased(evt);
             }
         });
-        addPersonPanel.add(bpTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(565, 166, 150, -1));
-        addPersonPanel.add(pastIllnessTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 332, 118, -1));
-        addPersonPanel.add(communityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 275, 140, -1));
-        addPersonPanel.add(cityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 332, 140, -1));
+        addPersonPanel.add(bpTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 170, 150, -1));
+        addPersonPanel.add(pastIllnessTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 118, -1));
+        addPersonPanel.add(communityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, 140, -1));
+        addPersonPanel.add(cityTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, 140, -1));
 
         backButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         backButton.setText("<< BACK");
@@ -155,7 +156,7 @@ public class hospitalCreatePateintPanel extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
-        addPersonPanel.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 28, 107, 41));
+        addPersonPanel.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 107, 41));
 
         saveDetailsButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         saveDetailsButton.setText("SAVE DETAILS");
@@ -164,7 +165,7 @@ public class hospitalCreatePateintPanel extends javax.swing.JPanel {
                 saveDetailsButtonActionPerformed(evt);
             }
         });
-        addPersonPanel.add(saveDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, -1, 41));
+        addPersonPanel.add(saveDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, -1, 41));
 
         clearButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         clearButton.setText("CLEAR");
@@ -173,25 +174,25 @@ public class hospitalCreatePateintPanel extends javax.swing.JPanel {
                 clearButtonActionPerformed(evt);
             }
         });
-        addPersonPanel.add(clearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, 114, 41));
+        addPersonPanel.add(clearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, 114, 41));
 
         jLabel11.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel11.setText("ILLNESS :");
-        addPersonPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 277, -1, -1));
-        addPersonPanel.add(illnessTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 276, 150, -1));
+        addPersonPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
+        addPersonPanel.add(illnessTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 150, -1));
 
         jLabel13.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel13.setText("HOUSE :");
-        addPersonPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 221, -1, -1));
+        addPersonPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, -1, -1));
 
         houseTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 houseTFActionPerformed(evt);
             }
         });
-        addPersonPanel.add(houseTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(565, 220, 150, -1));
+        addPersonPanel.add(houseTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 220, 150, -1));
         addPersonPanel.add(nameVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 140, 20));
-        addPersonPanel.add(genderVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 150, 20));
+        addPersonPanel.add(genderVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 150, 20));
         addPersonPanel.add(ageVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 160, 20));
         addPersonPanel.add(pulseVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 134, 150, 20));
         addPersonPanel.add(bpVal, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, 140, 20));

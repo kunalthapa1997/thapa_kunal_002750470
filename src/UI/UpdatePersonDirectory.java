@@ -86,7 +86,7 @@ public class UpdatePersonDirectory extends javax.swing.JPanel {
         passwordLbl = new javax.swing.JLabel();
         passwordTF = new javax.swing.JTextField();
 
-        addPersonPanel.setBackground(new java.awt.Color(204, 255, 255));
+        addPersonPanel.setBackground(new java.awt.Color(0, 102, 102));
         addPersonPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -246,7 +246,7 @@ public class UpdatePersonDirectory extends javax.swing.JPanel {
         });
         addPersonPanel.add(houseTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(573, 216, 150, -1));
 
-        isPatientCB.setBackground(new java.awt.Color(204, 255, 255));
+        isPatientCB.setBackground(new java.awt.Color(0, 102, 102));
         isPatientCB.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         isPatientCB.setText("IS PATIENT ?");
         isPatientCB.addActionListener(new java.awt.event.ActionListener() {
@@ -254,7 +254,7 @@ public class UpdatePersonDirectory extends javax.swing.JPanel {
                 isPatientCBActionPerformed(evt);
             }
         });
-        addPersonPanel.add(isPatientCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 375, -1, -1));
+        addPersonPanel.add(isPatientCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, -1, -1));
         addPersonPanel.add(patientStatusTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(583, 378, 140, -1));
 
         saveDetailsButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N

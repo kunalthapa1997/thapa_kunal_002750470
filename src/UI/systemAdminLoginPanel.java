@@ -51,7 +51,7 @@ public class systemAdminLoginPanel extends javax.swing.JPanel {
         loginBtn = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
 
-        leftCredentialPanel.setBackground(new java.awt.Color(0, 51, 51));
+        leftCredentialPanel.setBackground(new java.awt.Color(0, 102, 102));
 
         leftPanelLbl.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         leftPanelLbl.setForeground(new java.awt.Color(255, 255, 255));
@@ -64,16 +64,12 @@ public class systemAdminLoginPanel extends javax.swing.JPanel {
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Patient Login Portal");
+        jLabel1.setText("System Admin Login Portal");
 
         javax.swing.GroupLayout leftCredentialPanelLayout = new javax.swing.GroupLayout(leftCredentialPanel);
         leftCredentialPanel.setLayout(leftCredentialPanelLayout);
         leftCredentialPanelLayout.setHorizontalGroup(
             leftCredentialPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, leftCredentialPanelLayout.createSequentialGroup()
-                .addGap(0, 51, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(50, 50, 50))
             .addGroup(leftCredentialPanelLayout.createSequentialGroup()
                 .addGroup(leftCredentialPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(leftCredentialPanelLayout.createSequentialGroup()
@@ -81,8 +77,11 @@ public class systemAdminLoginPanel extends javax.swing.JPanel {
                         .addComponent(leftPanelLbl))
                     .addGroup(leftCredentialPanelLayout.createSequentialGroup()
                         .addGap(106, 106, 106)
-                        .addComponent(leftPanelLbl1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(leftPanelLbl1))
+                    .addGroup(leftCredentialPanelLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel1)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         leftCredentialPanelLayout.setVerticalGroup(
             leftCredentialPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,9 +90,9 @@ public class systemAdminLoginPanel extends javax.swing.JPanel {
                 .addComponent(leftPanelLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(leftPanelLbl1)
-                .addGap(81, 81, 81)
+                .addGap(80, 80, 80)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                .addGap(212, 212, 212))
+                .addGap(213, 213, 213))
         );
 
         rightPanelLbl.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
@@ -195,7 +194,7 @@ public class systemAdminLoginPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 309, Short.MAX_VALUE)
+                .addGap(0, 345, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
