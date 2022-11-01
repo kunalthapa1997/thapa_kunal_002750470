@@ -16,7 +16,7 @@ The hospital management system keeps a collection of directories with different 
 
 **MODULE DESCRIPTION:- **
 
-**1. ADMIN MODULE:**
+**1. SYSTEM ADMIN MODULE:**
 * Manage operations of hospitals, patients, doctors, community.
 * Watch transaction reports of the patient reports.
 * Can view Doctor’s details and Patients details.
