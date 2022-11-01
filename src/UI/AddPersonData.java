@@ -73,7 +73,7 @@ public class AddPersonData extends javax.swing.JPanel {
         bpVal = new javax.swing.JLabel();
         isDoctorCB = new javax.swing.JCheckBox();
 
-        addPersonPanel.setBackground(new java.awt.Color(204, 255, 255));
+        addPersonPanel.setBackground(new java.awt.Color(0, 102, 102));
         addPersonPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N

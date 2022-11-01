@@ -54,7 +54,7 @@ public class patientLoginPanel extends javax.swing.JPanel {
         loginBtn = new javax.swing.JButton();
         logOutBtn = new javax.swing.JButton();
 
-        leftCredentialPanel.setBackground(new java.awt.Color(0, 51, 51));
+        leftCredentialPanel.setBackground(new java.awt.Color(0, 102, 102));
 
         leftPanelLbl.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         leftPanelLbl.setForeground(new java.awt.Color(255, 255, 255));

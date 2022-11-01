@@ -40,7 +40,7 @@ public class AdminWindow extends javax.swing.JPanel {
         personDirectoryButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
         personDirectoryButton.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         personDirectoryButton.setText("DIRECTORIES");

@@ -53,7 +53,7 @@ public class CreateEncounter extends javax.swing.JPanel {
         diagnosisTF = new javax.swing.JTextField();
         medicineTF = new javax.swing.JTextField();
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
