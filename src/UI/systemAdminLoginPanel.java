@@ -49,6 +49,7 @@ public class systemAdminLoginPanel extends javax.swing.JPanel {
         passwordTxt = new javax.swing.JPasswordField();
         clearBtn = new javax.swing.JButton();
         loginBtn = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
 
         leftCredentialPanel.setBackground(new java.awt.Color(0, 51, 51));
 
@@ -130,28 +131,38 @@ public class systemAdminLoginPanel extends javax.swing.JPanel {
             }
         });
 
+        backButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        backButton.setText("LOG OUT");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(151, 151, 151)
-                            .addComponent(clearBtn)
-                            .addGap(43, 43, 43)
-                            .addComponent(loginBtn))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(passwordLbl)
-                            .addGap(18, 18, 18)
-                            .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(passwordLbl)
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addComponent(usernameLbl)
                         .addGap(18, 18, 18)
-                        .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(backButton)
+                        .addGap(41, 41, 41)
+                        .addComponent(clearBtn)
+                        .addGap(42, 42, 42)
+                        .addComponent(loginBtn)
+                        .addGap(18, 18, 18)))
                 .addContainerGap(69, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(210, 210, 210)
@@ -174,7 +185,8 @@ public class systemAdminLoginPanel extends javax.swing.JPanel {
                 .addGap(67, 67, 67)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clearBtn)
-                    .addComponent(loginBtn))
+                    .addComponent(loginBtn)
+                    .addComponent(backButton))
                 .addContainerGap(220, Short.MAX_VALUE))
         );
 
@@ -225,8 +237,18 @@ public class systemAdminLoginPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_loginBtnActionPerformed
 
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        this.patientDir = admin.getPatientDirectory();
+        commonHomeScreenPanel commonHomeScreenPanel = new commonHomeScreenPanel(lowerPanel, patientDir);
+        lowerPanel.add("commonHomeScreenPanel", commonHomeScreenPanel);
+        CardLayout cardLayout = (CardLayout) lowerPanel.getLayout();
+        cardLayout.next(lowerPanel);
+    }//GEN-LAST:event_backButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
     private javax.swing.JButton clearBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
